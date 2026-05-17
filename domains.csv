@@ -1,0 +1,26 @@
+domain,organization,category,tier,harm,source,date_verified,notes
+*.chainalysis.com,Chainalysis Inc.,Blockchain Analytics,1,Logs querying IP addresses against Bitcoin address lookup requests. Sells intelligence to law enforcement and financial institutions.,https://www.chainalysis.com/reactor/,2026-05-04,Primary blockchain surveillance firm. Also operates transpose.io (acquired 2022).
+chainalysis.com,Chainalysis Inc.,Blockchain Analytics,1,Root domain for primary blockchain surveillance firm.,https://www.chainalysis.com/,2026-05-04,
+transpose.io,Chainalysis Inc.,Blockchain Analytics,1,On-chain data API operated by Chainalysis subsidiary.,https://transpose.io/,2026-05-04,Acquired by Chainalysis 2022 - verify still active.
+*.transpose.io,Chainalysis Inc.,Blockchain Analytics,1,All subdomains of Chainalysis subsidiary Transpose.,https://transpose.io/,2026-05-04,Acquired by Chainalysis 2022 - verify still active.
+*.elliptic.co,Elliptic,Blockchain Analytics,1,Blockchain analytics and compliance APIs. Transaction monitoring reveals queried addresses to Elliptic servers.,https://www.elliptic.co/,2026-05-04,Used by exchanges for address screening.
+elliptic.co,Elliptic,Blockchain Analytics,1,Root domain for Elliptic blockchain analytics platform.,https://www.elliptic.co/,2026-05-04,
+*.trmlabs.com,TRM Labs,Blockchain Analytics,1,AI-driven blockchain intelligence. BLOCKINT API correlates address queries with IP addresses.,https://www.trmlabs.com/,2026-05-04,Used by financial institutions and exchanges.
+trmlabs.com,TRM Labs,Blockchain Analytics,1,Root domain for TRM Labs blockchain intelligence platform.,https://www.trmlabs.com/,2026-05-04,
+*.ciphertrace.com,CipherTrace (Mastercard),Blockchain Analytics,1,Blockchain analytics acquired by Mastercard. Transaction monitoring with government and financial institution clients.,https://ciphertrace.com/,2026-05-04,Acquired by Mastercard 2021.
+ciphertrace.com,CipherTrace (Mastercard),Blockchain Analytics,1,Root domain for CipherTrace blockchain analytics platform.,https://ciphertrace.com/,2026-05-04,Acquired by Mastercard 2021.
+*.crystalblockchain.com,Crystal Blockchain,Blockchain Analytics,1,Transaction monitoring and risk scoring. Address queries reveal holdings and transaction history.,https://crystalblockchain.com/,2026-05-04,
+crystalblockchain.com,Crystal Blockchain,Blockchain Analytics,1,Root domain for Crystal Blockchain analytics platform.,https://crystalblockchain.com/,2026-05-04,
+bitrank.com,Crystal Blockchain,Blockchain Analytics,1,Crystal Blockchain alias domain used for address risk scoring API.,https://crystalblockchain.com/,2026-05-04,Also known as BitRank Verified.
+*.bitrank.com,Crystal Blockchain,Blockchain Analytics,1,All subdomains of Crystal Blockchain BitRank alias.,https://crystalblockchain.com/,2026-05-04,
+*.scorechain.com,Scorechain,KYC/AML Compliance,1,Compliance platform used by exchanges to flag privacy-enhancing transactions including CoinJoin.,https://scorechain.com/,2026-05-04,Flags CoinJoin as high risk.
+scorechain.com,Scorechain,KYC/AML Compliance,1,Root domain for Scorechain compliance platform.,https://scorechain.com/,2026-05-04,
+*.merkle.science,Merkle Science,Blockchain Analytics,1,Predictive risk platform logs Bitcoin address queries against IP addresses.,https://merkle.science/,2026-05-04,
+merkle.science,Merkle Science,Blockchain Analytics,1,Root domain for Merkle Science blockchain intelligence platform.,https://merkle.science/,2026-05-04,
+*.arkm.com,Arkham Intelligence,Deanonymization,1,Publicly markets tools to attach real-world identities to Bitcoin addresses. Every address lookup logged against querying IP.,https://intel.arkm.com/,2026-05-04,CRITICAL - marketed specifically as deanonymization tool.
+arkm.com,Arkham Intelligence,Deanonymization,1,Root domain for Arkham Intelligence deanonymization platform.,https://intel.arkm.com/,2026-05-04,CRITICAL - marketed specifically as deanonymization tool.
+intel.arkm.com,Arkham Intelligence,Deanonymization,1,Arkham Intel platform endpoint. Every address lookup is logged against the querying IP address.,https://intel.arkm.com/,2026-05-04,Direct API endpoint for identity-linking queries.
+*.metasleuth.io,MetaSleuth,Deanonymization,1,Crypto tracking and investigation platform. All address and wallet queries are logged.,https://metasleuth.io/,2026-05-04,
+metasleuth.io,MetaSleuth,Deanonymization,1,Root domain for MetaSleuth blockchain investigation platform.,https://metasleuth.io/,2026-05-04,
+*.breadcrumbs.app,Breadcrumbs,Blockchain Analytics,1,Free blockchain analytics tool. IP logged against every address query.,https://breadcrumbs.app/,2026-05-04,Free tool lowers barrier to mass surveillance.
+breadcrumbs.app,Breadcrumbs,Blockchain Analytics,1,Root domain for Breadcrumbs blockchain analytics.,https://breadcrumbs.app/,2026-05-04,

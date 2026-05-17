@@ -1,0 +1,28 @@
+# SatoshiShield — Bitcoin Privacy DNS Blocklist
+# Domain-only format — compatible with Pi-hole v5+, Pi-hole v6, AdGuard Home
+# TIER 2 — Needs verification. Use with caution. May have higher false positive rate.
+# https://github.com/sawdustpilgrim/satoshishield
+# Version: 1.0 | Updated: 2026-05-04
+#
+# Installation (Pi-hole): Settings > Blocklists > Add
+# https://raw.githubusercontent.com/sawdustpilgrim/satoshishield/main/blocklist.txt
+#
+
+# --- Blockchain Analytics ---
+*.bitquery.io
+*.cryptoquant.com
+*.glassnode.com
+*.nansen.ai
+bitquery.io
+cryptoquant.com
+glassnode.com
+nansen.ai
+
+# --- Wallet Telemetry ---
+*.amplitude.com
+*.mixpanel.com
+*.segment.io
+amplitude.com
+mixpanel.com
+segment.com
+segment.io

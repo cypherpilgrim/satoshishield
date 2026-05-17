@@ -1,0 +1,37 @@
+# SatoshiShield — Bitcoin Privacy DNS Blocklist
+# Hosts file format — compatible with Pi-hole v4, Unix/Windows hosts file
+# TIER 1 — High confidence entries only.
+# https://github.com/sawdustpilgrim/satoshishield
+# Version: 1.0 | Updated: 2026-05-04
+#
+
+# --- Blockchain Analytics ---
+# *.bitrank.com  (wildcard — use domain-only format for full coverage)
+# *.breadcrumbs.app  (wildcard — use domain-only format for full coverage)
+# *.chainalysis.com  (wildcard — use domain-only format for full coverage)
+# *.ciphertrace.com  (wildcard — use domain-only format for full coverage)
+# *.crystalblockchain.com  (wildcard — use domain-only format for full coverage)
+# *.elliptic.co  (wildcard — use domain-only format for full coverage)
+# *.merkle.science  (wildcard — use domain-only format for full coverage)
+# *.transpose.io  (wildcard — use domain-only format for full coverage)
+# *.trmlabs.com  (wildcard — use domain-only format for full coverage)
+0.0.0.0 bitrank.com
+0.0.0.0 breadcrumbs.app
+0.0.0.0 chainalysis.com
+0.0.0.0 ciphertrace.com
+0.0.0.0 crystalblockchain.com
+0.0.0.0 elliptic.co
+0.0.0.0 merkle.science
+0.0.0.0 transpose.io
+0.0.0.0 trmlabs.com
+
+# --- Deanonymization ---
+# *.arkm.com  (wildcard — use domain-only format for full coverage)
+# *.metasleuth.io  (wildcard — use domain-only format for full coverage)
+0.0.0.0 arkm.com
+0.0.0.0 intel.arkm.com
+0.0.0.0 metasleuth.io
+
+# --- KYC/AML Compliance ---
+# *.scorechain.com  (wildcard — use domain-only format for full coverage)
+0.0.0.0 scorechain.com

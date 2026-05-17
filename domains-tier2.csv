@@ -1,0 +1,16 @@
+domain,organization,category,tier,harm,source,date_verified,notes
+*.glassnode.com,Glassnode,Blockchain Analytics,2,On-chain analytics platform. IP may be logged against address and metric queries.,https://glassnode.com/,2026-05-04,NEEDS VERIFICATION - dual use platform with legitimate research use cases.
+glassnode.com,Glassnode,Blockchain Analytics,2,Root domain for Glassnode on-chain analytics.,https://glassnode.com/,2026-05-04,NEEDS VERIFICATION.
+*.nansen.ai,Nansen,Blockchain Analytics,2,Wallet labeling and identity analytics platform.,https://nansen.ai/,2026-05-04,NEEDS VERIFICATION - confirm API logs IP against address queries.
+nansen.ai,Nansen,Blockchain Analytics,2,Root domain for Nansen on-chain analytics.,https://nansen.ai/,2026-05-04,NEEDS VERIFICATION.
+*.cryptoquant.com,CryptoQuant,Blockchain Analytics,2,On-chain analytics platform.,https://cryptoquant.com/,2026-05-04,NEEDS VERIFICATION - confirm IP logging behavior.
+cryptoquant.com,CryptoQuant,Blockchain Analytics,2,Root domain for CryptoQuant on-chain analytics.,https://cryptoquant.com/,2026-05-04,NEEDS VERIFICATION.
+*.bitquery.io,Bitquery,Blockchain Analytics,2,Blockchain data platform.,https://bitquery.io/,2026-05-04,NEEDS VERIFICATION - confirm query IP logging.
+bitquery.io,Bitquery,Blockchain Analytics,2,Root domain for Bitquery blockchain data platform.,https://bitquery.io/,2026-05-04,NEEDS VERIFICATION.
+mixpanel.com,Mixpanel,Wallet Telemetry,2,Analytics SDK used in some Bitcoin wallet apps to track usage behavior.,https://mixpanel.com/,2026-05-04,NEEDS VERIFICATION - dual use domain. Blocking may impact non-Bitcoin apps.
+*.mixpanel.com,Mixpanel,Wallet Telemetry,2,All subdomains of Mixpanel analytics platform.,https://mixpanel.com/,2026-05-04,NEEDS VERIFICATION - dual use domain.
+amplitude.com,Amplitude,Wallet Telemetry,2,Behavioral analytics SDK embedded in some wallet apps.,https://amplitude.com/,2026-05-04,NEEDS VERIFICATION - dual use domain. Confirm specific wallet usage.
+*.amplitude.com,Amplitude,Wallet Telemetry,2,All subdomains of Amplitude analytics platform.,https://amplitude.com/,2026-05-04,NEEDS VERIFICATION - dual use domain.
+segment.com,Segment (Twilio),Wallet Telemetry,2,Customer data platform SDK used in some wallet apps.,https://segment.com/,2026-05-04,NEEDS VERIFICATION - very broad dual use. High false positive risk.
+segment.io,Segment (Twilio),Wallet Telemetry,2,Segment alias domain.,https://segment.com/,2026-05-04,NEEDS VERIFICATION - very broad dual use.
+*.segment.io,Segment (Twilio),Wallet Telemetry,2,All subdomains of Segment analytics platform.,https://segment.com/,2026-05-04,NEEDS VERIFICATION - very broad dual use.
