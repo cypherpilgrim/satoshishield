@@ -2,19 +2,27 @@
 # Domain-only format — compatible with Pi-hole v5+, Pi-hole v6, AdGuard Home
 # ALL TIERS COMBINED — Tier 1 (high confidence) + Tier 2 (needs verification).
 # https://github.com/cypherpilgrim/satoshishield
-# Version: 1.0 | Updated: 2026-05-18
+# Version: 1.3 | Updated: 2026-05-19
 #
 # Installation (Pi-hole): Settings > Blocklists > Add
-# https://raw.githubusercontent.com/cypherpilgrim/satoshishield/main/blocklist.txt
+# https://raw.githubusercontent.com/cypherpilgrim/satoshishield/main/blocklist-all.txt
+#
+# NOTE: Pi-hole's URL-fetched lists ignore *.foo.com wildcards.
+# For true wildcard coverage of all subdomains, also apply regex.txt
+# as Pi-hole regex deny rules. See README for instructions.
+#
+# WARNING: Tier 2 entries are flagged NEEDS VERIFICATION. Review domains-tier2.csv
+# before enabling Tier 2. Some entries (Mixpanel, Amplitude, Segment) are dual-use
+# SDKs that may impact non-Bitcoin applications.
 #
 
+# ===== TIER 1 — High confidence =====
+
 # --- Blockchain Analytics ---
-*.bitquery.io
 *.bitrank.com
 *.breadcrumbs.app
 *.chainalysis.com
 *.ciphertrace.com
-*.cryptoquant.com
 *.crystalblockchain.com
 *.elliptic.co
 *.glassnode.com
@@ -22,12 +30,10 @@
 *.nansen.ai
 *.transpose.io
 *.trmlabs.com
-bitquery.io
 bitrank.com
 breadcrumbs.app
 chainalysis.com
 ciphertrace.com
-cryptoquant.com
 crystalblockchain.com
 elliptic.co
 glassnode.com
@@ -47,7 +53,15 @@ metasleuth.io
 *.scorechain.com
 scorechain.com
 
-# --- Wallet Telemetry ---
+# ===== TIER 2 — Needs verification =====
+
+# --- Blockchain Analytics ---
+*.bitquery.io
+*.cryptoquant.com
+bitquery.io
+cryptoquant.com
+
+# --- Wallet Telemetry (dual-use, high false positive risk) ---
 *.amplitude.com
 *.mixpanel.com
 *.segment.io

@@ -2,7 +2,7 @@
 # Hosts file format — compatible with Pi-hole v4, Unix/Windows hosts file
 # TIER 1 — High confidence entries only.
 # https://github.com/cypherpilgrim/satoshishield
-# Version: 1.0 | Updated: 2026-05-18
+# Version: 1.3 | Updated: 2026-05-19
 #
 # NOTE: Hosts file format does not support wildcards.
 # For subdomain coverage, apply regex.txt as Pi-hole regex deny rules.

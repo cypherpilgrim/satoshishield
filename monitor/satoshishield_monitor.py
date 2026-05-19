@@ -99,6 +99,15 @@ SURVEILLANCE_PATTERNS = {
     r"(?:\.|^)breadcrumbs\.app$":      ("Breadcrumbs",       "Blockchain Analytics", "Free blockchain analytics tool"),
     r"(?:\.|^)nansen\.ai$":            ("Nansen",            "Surveillance Analytics","Wallet labeling and identity profiling"),
     r"(?:\.|^)glassnode\.com$":        ("Glassnode",         "Market Surveillance",  "On-chain analytics; logs IP against queries"),
+
+    # Tier 2 — Needs verification. Not in ALREADY_BLOCKED above, so any hit
+    # here surfaces as a "new" surveillance domain in the report for review.
+    r"(?:\.|^)cryptoquant\.com$":      ("CryptoQuant",       "Blockchain Analytics", "Tier 2: On-chain analytics platform; IP logging behavior needs verification"),
+    r"(?:\.|^)bitquery\.io$":          ("Bitquery",          "Blockchain Analytics", "Tier 2: Blockchain data platform; query IP logging needs verification"),
+    r"(?:\.|^)mixpanel\.com$":         ("Mixpanel",          "Wallet Telemetry",     "Tier 2: Analytics SDK used in some Bitcoin wallet apps; dual-use"),
+    r"(?:\.|^)amplitude\.com$":        ("Amplitude",         "Wallet Telemetry",     "Tier 2: Behavioral analytics SDK embedded in some wallet apps; dual-use"),
+    r"(?:\.|^)segment\.com$":          ("Segment (Twilio)",  "Wallet Telemetry",     "Tier 2: Customer data platform SDK; very broad dual-use, high false positive risk"),
+    r"(?:\.|^)segment\.io$":           ("Segment (Twilio)",  "Wallet Telemetry",     "Tier 2: Segment alias domain; very broad dual-use"),
 }
 
 # ---------------------------------------------------------------------------
