@@ -1,0 +1,27 @@
+# SatoshiShield — Pi-hole Regex Deny Rules
+# Provides true wildcard coverage matching any subdomain of each organization.
+# https://github.com/cypherpilgrim/satoshishield
+# Version: 1.0 | Updated: 2026-05-18
+#
+# Why this exists:
+# Pi-hole's URL-fetched blocklists silently ignore *.foo.com wildcards.
+# These regex rules ensure all current AND future subdomains are blocked.
+# Apply via the Pi-hole admin UI or directly to gravity.db (see README).
+#
+# Pi-hole admin UI: Domains > Add domain > Regex Deny
+# Or via sqlite3 (advanced — see README for full SQL)
+
+(\.|^)chainalysis\.com$
+(\.|^)transpose\.io$
+(\.|^)elliptic\.co$
+(\.|^)trmlabs\.com$
+(\.|^)ciphertrace\.com$
+(\.|^)arkm\.com$
+(\.|^)crystalblockchain\.com$
+(\.|^)bitrank\.com$
+(\.|^)scorechain\.com$
+(\.|^)merkle\.science$
+(\.|^)metasleuth\.io$
+(\.|^)breadcrumbs\.app$
+(\.|^)nansen\.ai$
+(\.|^)glassnode\.com$

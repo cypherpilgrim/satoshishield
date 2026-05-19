@@ -39,7 +39,7 @@ SatoshiShield uses a two-tier system to distinguish high-confidence entries from
 2. Add this URL:
 
 ```
-https://raw.githubusercontent.com/sawdustpilgrim/satoshishield/main/blocklist.txt
+https://raw.githubusercontent.com/cypherpilgrim/satoshishield/main/blocklist.txt
 ```
 
 3. Run gravity update:
@@ -51,13 +51,13 @@ pihole -g
 ### Pi-hole — Tier 2 (Needs Verification)
 
 ```
-https://raw.githubusercontent.com/sawdustpilgrim/satoshishield/main/blocklist-tier2.txt
+https://raw.githubusercontent.com/cypherpilgrim/satoshishield/main/blocklist-tier2.txt
 ```
 
 ### Pi-hole — All Tiers Combined
 
 ```
-https://raw.githubusercontent.com/sawdustpilgrim/satoshishield/main/blocklist-all.txt
+https://raw.githubusercontent.com/cypherpilgrim/satoshishield/main/blocklist-all.txt
 ```
 
 ### AdGuard Home — Tier 1
@@ -66,7 +66,7 @@ https://raw.githubusercontent.com/sawdustpilgrim/satoshishield/main/blocklist-al
 2. Add:
 
 ```
-https://raw.githubusercontent.com/sawdustpilgrim/satoshishield/main/satoshishield.abp
+https://raw.githubusercontent.com/cypherpilgrim/satoshishield/main/satoshishield.abp
 ```
 
 ### Hosts File (manual)

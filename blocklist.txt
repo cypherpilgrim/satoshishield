@@ -1,11 +1,15 @@
 # SatoshiShield — Bitcoin Privacy DNS Blocklist
 # Domain-only format — compatible with Pi-hole v5+, Pi-hole v6, AdGuard Home
 # TIER 1 — High confidence. Organizations whose primary business is Bitcoin surveillance.
-# https://github.com/sawdustpilgrim/satoshishield
-# Version: 1.0 | Updated: 2026-05-04
+# https://github.com/cypherpilgrim/satoshishield
+# Version: 1.0 | Updated: 2026-05-18
 #
 # Installation (Pi-hole): Settings > Blocklists > Add
-# https://raw.githubusercontent.com/sawdustpilgrim/satoshishield/main/blocklist.txt
+# https://raw.githubusercontent.com/cypherpilgrim/satoshishield/main/blocklist.txt
+#
+# NOTE: Pi-hole's URL-fetched lists ignore *.foo.com wildcards.
+# For true wildcard coverage of all subdomains, also apply regex.txt
+# as Pi-hole regex deny rules. See README for instructions.
 #
 
 # --- Blockchain Analytics ---
@@ -15,7 +19,9 @@
 *.ciphertrace.com
 *.crystalblockchain.com
 *.elliptic.co
+*.glassnode.com
 *.merkle.science
+*.nansen.ai
 *.transpose.io
 *.trmlabs.com
 bitrank.com
@@ -24,7 +30,9 @@ chainalysis.com
 ciphertrace.com
 crystalblockchain.com
 elliptic.co
+glassnode.com
 merkle.science
+nansen.ai
 transpose.io
 trmlabs.com
 

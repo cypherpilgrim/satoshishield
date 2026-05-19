@@ -1,10 +1,12 @@
 [Adblock Plus 2.0]
 ! Title: SatoshiShield — Bitcoin Privacy DNS Blocklist (Tier 1)
 ! Description: Blocks blockchain analytics firms and Bitcoin surveillance infrastructure
-! Homepage: https://github.com/sawdustpilgrim/satoshishield
+! Homepage: https://github.com/cypherpilgrim/satoshishield
 ! Version: 1.0
-! Last modified: 2026-05-04
+! Last modified: 2026-05-18
 ! License: MIT
+!
+! ABP/AdGuard syntax: || matches the domain and all subdomains
 !
 ! --- Blockchain Analytics ---
 ||bitrank.com^
@@ -13,24 +15,13 @@
 ||ciphertrace.com^
 ||crystalblockchain.com^
 ||elliptic.co^
+||glassnode.com^
 ||merkle.science^
-||transpose.io^
-||trmlabs.com^
-||bitrank.com^
-||breadcrumbs.app^
-||chainalysis.com^
-||ciphertrace.com^
-||crystalblockchain.com^
-||elliptic.co^
-||merkle.science^
+||nansen.ai^
 ||transpose.io^
 ||trmlabs.com^
 ! --- Deanonymization ---
 ||arkm.com^
 ||metasleuth.io^
-||arkm.com^
-||intel.arkm.com^
-||metasleuth.io^
 ! --- KYC/AML Compliance ---
-||scorechain.com^
 ||scorechain.com^
