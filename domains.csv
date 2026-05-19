@@ -24,3 +24,7 @@ intel.arkm.com,Arkham Intelligence,Deanonymization,1,Arkham Intel platform endpo
 metasleuth.io,MetaSleuth,Deanonymization,1,Root domain for MetaSleuth blockchain investigation platform.,https://metasleuth.io/,2026-05-04,
 *.breadcrumbs.app,Breadcrumbs,Blockchain Analytics,1,Free blockchain analytics tool. IP logged against every address query.,https://breadcrumbs.app/,2026-05-04,Free tool lowers barrier to mass surveillance.
 breadcrumbs.app,Breadcrumbs,Blockchain Analytics,1,Root domain for Breadcrumbs blockchain analytics.,https://breadcrumbs.app/,2026-05-04,
+*.glassnode.com,Glassnode,Blockchain Analytics,1,On-chain analytics platform. IP logged against address and metric queries.,https://glassnode.com/,2026-05-19,Promoted to Tier 1 from Tier 2 in v1.1.
+glassnode.com,Glassnode,Blockchain Analytics,1,Root domain for Glassnode on-chain analytics.,https://glassnode.com/,2026-05-19,Promoted to Tier 1 from Tier 2 in v1.1.
+*.nansen.ai,Nansen,Surveillance Analytics,1,Wallet labeling and identity profiling. Builds identity profiles from address query patterns.,https://nansen.ai/,2026-05-19,Promoted to Tier 1 from Tier 2 in v1.1.
+nansen.ai,Nansen,Surveillance Analytics,1,Root domain for Nansen wallet labeling and identity analytics.,https://nansen.ai/,2026-05-19,Promoted to Tier 1 from Tier 2 in v1.1.

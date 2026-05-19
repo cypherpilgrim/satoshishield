@@ -1,1 +1,5 @@
 .DS_Store
+
+# Monitor credentials
+monitor/.env
+/opt/satoshishield/.env
