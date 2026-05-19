@@ -271,7 +271,7 @@ The monitor distinguishes two cases:
 
 The monitor uses only Python's standard library and reads all SMTP credentials from a gitignored `.env` file. It does not transmit query data outside the user's network.
 
-For deployment instructions, see the [Monitor Deployment Guide](docs/SatoshiShield_Monitor_Deployment_v1_0.docx). For instructions on reading the monthly reports, see the [Monitor Report Reading Guide](monitor/SatoshiShield_Monitor_Report_Reading_Guide_v1_0.docx).
+For deployment instructions, see the [Monitor Deployment Guide](docs/SatoshiShield_Monitor_Deployment_v1_4.docx). For instructions on reading the monthly reports, see the [Monitor Report Reading Guide](monitor/SatoshiShield_Monitor_Report_Reading_Guide_v1_0.docx).
 
 ---
 
@@ -299,11 +299,11 @@ Full documentation lives in the `docs/` directory:
 |---|---|---|
 | [Why Bitcoin Privacy Matters](docs/Why_Bitcoin_Privacy_Matters_v1_0.docx) | All readers | Short guide explaining the Bitcoin surveillance industry and what it means for users |
 | [Why Bitcoin Privacy Matters: Deep Dive](docs/Why_Bitcoin_Privacy_Matters_Deep_Dive_v1_0.docx) | Readers wanting more depth | Same topics, longer treatment with sources and case studies |
-| [White Paper](docs/SatoshiShield_WhitePaper_v1_0.docx) | Technical readers | Full project rationale, architecture, methodology, and adversarial analysis |
-| [Contributor Guide](docs/SatoshiShield_Contributor_Guide_v1_0.docx) | Contributors | Full research methodology, tools reference, and submission process |
-| [Monitor Deployment Guide](docs/SatoshiShield_Monitor_Deployment_v1_0.docx) | Operators | How to install and configure the optional monitoring script |
+| [White Paper](docs/SatoshiShield_WhitePaper_v1_4.docx) | Technical readers | Full project rationale, architecture, methodology, and adversarial analysis |
+| [Contributor Guide](docs/SatoshiShield_Contributor_Guide_v1_4.docx) | Contributors | Full research methodology, tools reference, and submission process |
+| [Monitor Deployment Guide](docs/SatoshiShield_Monitor_Deployment_v1_4.docx) | Operators | How to install and configure the optional monitoring script |
 | [Monitor Report Reading Guide](monitor/SatoshiShield_Monitor_Report_Reading_Guide_v1_0.docx) | Operators | How to read and interpret the monthly monitor reports |
-| [Quarterly Checklist](docs/SatoshiShield_Quarterly_Checklist_v1_0.docx) | Contributors | Structured research protocol for quarterly contribution cycles |
+| [Quarterly Checklist](docs/SatoshiShield_Quarterly_Checklist_v1_4.docx) | Contributors | Structured research protocol for quarterly contribution cycles |
 
 ---
 
@@ -314,7 +314,7 @@ Full documentation lives in the `docs/` directory:
 - **Browser DNS-over-HTTPS** — Browsers configured to use DNS-over-HTTPS (DoH) bypass the system resolver and therefore bypass Pi-hole and AdGuard Home. DoH should be disabled or configured to use Pi-hole as its upstream.
 - **Tier 2 entries** — Domains in Tier 2 need further community verification before being promoted to Tier 1. Review before enabling.
 
-See the [White Paper](docs/SatoshiShield_WhitePaper_v1_0.docx) for a full adversarial analysis.
+See the [White Paper](docs/SatoshiShield_WhitePaper_v1_4.docx) for a full adversarial analysis.
 
 ---
 
@@ -327,7 +327,7 @@ SatoshiShield grows through community research. If you discover a surveillance d
 3. Document your findings and open a pull request
 
 **Full research methodology:** [CONTRIBUTING.md](CONTRIBUTING.md)  
-**Quarterly research protocol:** [Contributor Guide](docs/SatoshiShield_Contributor_Guide_v1_0.docx)
+**Quarterly research protocol:** [Contributor Guide](docs/SatoshiShield_Contributor_Guide_v1_4.docx)
 
 ---
 

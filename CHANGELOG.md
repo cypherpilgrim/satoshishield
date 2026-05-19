@@ -6,6 +6,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ---
 
+## [1.4.0] — 2026-05-19
+
+### Fixed
+
+- **OPSEC: Monitor Deployment Guide sanitized.** The original `SatoshiShield_Monitor_Deployment_v1_0.docx` contained the maintainer's real email addresses, internal IP addresses, SSH usernames, and container IDs. These have been replaced with placeholders (`<proxmox-host>`, `<proxmox-user>`, `<report-email>`, `<smtp-user>`, etc.) consistent with the Monitor Report Reading Guide style. The new file is `SatoshiShield_Monitor_Deployment_v1_4.docx`.
+- **GitHub handle updated in all legacy docx files.** The White Paper, Contributor Guide, and Monitor Deployment Guide all referenced the old `sawdustpilgrim` GitHub handle, which no longer exists. All references now correctly point to `github.com/cypherpilgrim/satoshishield`. Affected files now ship as v1.4.
+- **LICENSE copyright notice updated.** Changed `Copyright (c) 2026 sawdustpilgrim` to `Copyright (c) 2026 cypherpilgrim` to match the active GitHub identity.
+- **White Paper Table 5 updated.** Glassnode and Nansen entries now note their promotion to Tier 1 in v1.1, rather than implying they are still Tier 2 as in the original v1.0 white paper.
+- **White Paper Section 4.4 clarified.** The phrase "Version 1.0 of SatoshiShield includes the following domain categories" has been rewritten to make clear that the listing describes the initial release state, with a pointer to the CHANGELOG for current state.
+- **White Paper About section.** The reference to "El Salvador" in Section 9 has been genericized to remove geographic identification.
+
+### Changed
+
+- **Document versioning.** The four legacy docx files are now versioned at v1.4 in their filenames, cover pages, and headers to reflect the current state of the project rather than the long-stale "v1_0" stamp.
+
+### Notes
+
+- This release does not change the blocklist files, the CSV evidence, or the monitor script. All five fixes are documentation and metadata changes.
+
+---
+
 ## [1.3.0] — 2026-05-19
 
 ### Fixed
