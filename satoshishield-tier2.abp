@@ -1,0 +1,22 @@
+[Adblock Plus 2.0]
+! Title: SatoshiShield — Bitcoin Privacy DNS Blocklist (Tier 2)
+! Description: Domains needing verification. Use with caution. Includes dual-use SDKs.
+! Homepage: https://github.com/cypherpilgrim/satoshishield
+! Version: 1.0
+! Last modified: 2026-05-19
+! License: MIT
+!
+! WARNING: Tier 2 entries are flagged NEEDS VERIFICATION. Review domains-tier2.csv
+! before enabling. Mixpanel, Amplitude, and Segment are dual-use SDKs that may
+! impact non-Bitcoin applications.
+!
+! ABP/AdGuard syntax: || matches the domain and all subdomains
+!
+! --- Blockchain Analytics ---
+||bitquery.io^
+||cryptoquant.com^
+! --- Wallet Telemetry (dual-use, high false positive risk) ---
+||amplitude.com^
+||mixpanel.com^
+||segment.com^
+||segment.io^
