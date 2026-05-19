@@ -1,6 +1,6 @@
 # Contributing to SatoshiShield
 
-Thank you for helping keep this blocklist accurate and current. This document covers the quick-reference contribution process. For the full research methodology, tools reference, and quarterly research protocol, see the [Contributor Guide](docs/SatoshiShield_Contributor_Guide_v1_0.docx).
+Thank you for helping keep this blocklist accurate and current. This document covers the quick-reference contribution process. For the full research methodology, tools reference, and quarterly research protocol, see the [Contributor Guide](docs/SatoshiShield_Contributor_Guide_v1_4.docx).
 
 ---
 
@@ -148,4 +148,4 @@ If a domain in the blocklist is incorrectly included or breaks legitimate functi
 
 ## Review Timeline
 
-Pull requests are reviewed within 21 days. All domain additions are independently verified before merging. See the [Contributor Guide](docs/SatoshiShield_Contributor_Guide_v1_0.docx) for the full verification process.
+Pull requests are reviewed within 21 days. All domain additions are independently verified before merging. See the [Contributor Guide](docs/SatoshiShield_Contributor_Guide_v1_4.docx) for the full verification process.

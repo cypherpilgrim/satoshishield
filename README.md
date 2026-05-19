@@ -96,9 +96,17 @@ https://raw.githubusercontent.com/cypherpilgrim/satoshishield/main/blocklist-all
 https://raw.githubusercontent.com/cypherpilgrim/satoshishield/main/satoshishield.abp
 ```
 
+### AdGuard Home — Tier 2 (Needs Verification)
+
+```
+https://raw.githubusercontent.com/cypherpilgrim/satoshishield/main/satoshishield-tier2.abp
+```
+
+Review [domains-tier2.csv](domains-tier2.csv) before enabling.
+
 ### Hosts File (manual, no Pi-hole or AdGuard required)
 
-For users without a DNS-level blocker, the [hosts.txt](hosts.txt) file can be appended to the system hosts file.
+For users without a DNS-level blocker, the [hosts.txt](hosts.txt) file (Tier 1) can be appended to the system hosts file. A Tier 2 version is also available at [hosts-tier2.txt](hosts-tier2.txt) for users who want broader coverage (review [domains-tier2.csv](domains-tier2.csv) first).
 
 | OS | Hosts file location | Requirements |
 |---|---|---|
@@ -284,6 +292,8 @@ For deployment instructions, see the [Monitor Deployment Guide](docs/SatoshiShie
 | [satoshishield.abp](satoshishield.abp) | 1 | ABP syntax | AdGuard (browser), uBlock Origin |
 | [regex.txt](regex.txt) | 1 | Pi-hole regex | Pi-hole wildcard coverage (see [install section](#pi-hole-regex-deny-rules-important)) |
 | [blocklist-tier2.txt](blocklist-tier2.txt) | 2 | Domain-only | Pi-hole, verify entries before use |
+| [hosts-tier2.txt](hosts-tier2.txt) | 2 | Hosts file | Pi-hole v4, Unix/Windows hosts file, verify before use |
+| [satoshishield-tier2.abp](satoshishield-tier2.abp) | 2 | ABP syntax | AdGuard (browser), uBlock Origin, verify before use |
 | [blocklist-all.txt](blocklist-all.txt) | 1+2 | Domain-only | All tiers combined |
 | [domains.csv](domains.csv) | 1 | CSV | Source data, Tier 1 entries with rationale |
 | [domains-tier2.csv](domains-tier2.csv) | 2 | CSV | Source data, Tier 2 entries needing verification |
@@ -304,6 +314,8 @@ Full documentation lives in the `docs/` directory:
 | [Monitor Deployment Guide](docs/SatoshiShield_Monitor_Deployment_v1_4.docx) | Operators | How to install and configure the optional monitoring script |
 | [Monitor Report Reading Guide](monitor/SatoshiShield_Monitor_Report_Reading_Guide_v1_0.docx) | Operators | How to read and interpret the monthly monitor reports |
 | [Quarterly Checklist](docs/SatoshiShield_Quarterly_Checklist_v1_4.docx) | Contributors | Structured research protocol for quarterly contribution cycles |
+| [CHANGELOG](CHANGELOG.md) | All readers | Version history and what changed in each release |
+| [SECURITY](SECURITY.md) | Security researchers | How to report security issues and what counts as one |
 
 ---
 

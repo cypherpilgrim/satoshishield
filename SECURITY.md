@@ -22,17 +22,13 @@ The first two categories are the most common and the most important. SatoshiShie
 
 ### Public reports (preferred for most issues)
 
-For missing surveillance domains, incorrectly blocked legitimate domains, and documentation issues, open a GitHub issue at:
-
-`https://github.com/cypherpilgrim/satoshishield/issues`
+For missing surveillance domains, incorrectly blocked legitimate domains, and documentation issues, open a [GitHub issue](https://github.com/cypherpilgrim/satoshishield/issues).
 
 Public reporting is preferred because it lets the community verify the finding and contribute additional evidence. Include the same verification steps documented in [CONTRIBUTING.md](CONTRIBUTING.md) if you are reporting a missing or incorrect domain.
 
 ### Private reports (for sensitive issues)
 
-For vulnerabilities in the monitor script, supply chain concerns, or any issue that could be exploited before a fix is released, open a private security advisory at:
-
-`https://github.com/cypherpilgrim/satoshishield/security/advisories/new`
+For vulnerabilities in the monitor script, supply chain concerns, or any issue that could be exploited before a fix is released, open a [private security advisory](https://github.com/cypherpilgrim/satoshishield/security/advisories/new).
 
 Private security advisories are visible only to repository maintainers until disclosed.
 

@@ -6,6 +6,31 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ---
 
+## [1.4.1] — 2026-05-19
+
+### Fixed
+
+- **OPSEC: Removed maintainer's real name from docx metadata.** `Why_Bitcoin_Privacy_Matters_v1_0.docx` had `Stephen Brouillard` in its `last_modified_by` core property field, set automatically when the file was opened in a desktop word processor during review. The file has been regenerated with clean metadata (`Un-named` for both `author` and `last_modified_by`), matching all other docx files in the repository.
+- **Broken links in CONTRIBUTING.md.** Two references to `SatoshiShield_Contributor_Guide_v1_0.docx` updated to `_v1_4` since the file was renamed in commit `83930dd`.
+- **Broken links in CHANGELOG.md v1.0 entry.** Four file references (White Paper, Contributor Guide, Monitor Deployment Guide, Quarterly Checklist) updated from `_v1_0` to `_v1_4`. The descriptive prose still mentions what was added at v1.0; the links now point to the current filenames.
+
+### Added
+
+- **README "Files in This Repository" table** now lists `hosts-tier2.txt` and `satoshishield-tier2.abp` (both added in v1.2 but missing from the table).
+- **README "Documentation" table** now lists `CHANGELOG.md` and `SECURITY.md`.
+- **README Quick Install section** now includes Tier 2 install URLs for AdGuard Home (`satoshishield-tier2.abp`) and a Tier 2 mention in the hosts file section (`hosts-tier2.txt`). Previously these formats had no install instructions in the README.
+- **`.env.example`** template file showing the required environment keys for the monitor script. Helps new operators understand the configuration without reading the deployment guide first.
+
+### Changed
+
+- **SECURITY.md URLs** converted from backtick-wrapped plain text to proper Markdown links. Users clicking the links now navigate to GitHub directly instead of needing to copy-paste a URL with stray backticks.
+
+### Notes
+
+- No changes to blocklist content, CSV evidence, or monitor script behavior. All fixes are documentation and metadata.
+
+---
+
 ## [1.4.0] — 2026-05-19
 
 ### Fixed
@@ -93,10 +118,10 @@ Initial public release.
 - **Combined `blocklist-all.txt`** for users who want all tiers in one list.
 - **Pi-hole regex deny rules** (`regex.txt`) providing true wildcard coverage that the URL-fetched blocklists cannot deliver alone.
 - **Evidence CSVs** (`domains.csv` and `domains-tier2.csv`) documenting the organization, category, harm, and source for every domain in each tier.
-- **White Paper** (`docs/SatoshiShield_WhitePaper_v1_0.docx`) covering the project rationale, architecture, methodology, and adversarial analysis.
-- **Contributor Guide** (`docs/SatoshiShield_Contributor_Guide_v1_0.docx`) covering the full research methodology, tools reference, and quarterly research protocol.
-- **Monitor Deployment Guide** (`docs/SatoshiShield_Monitor_Deployment_v1_0.docx`) covering installation and configuration of the optional monthly monitoring tool.
-- **Quarterly Checklist** (`docs/SatoshiShield_Quarterly_Checklist_v1_0.docx`), a structured research protocol for contribution cycles.
+- **White Paper** (`docs/SatoshiShield_WhitePaper_v1_4.docx`) covering the project rationale, architecture, methodology, and adversarial analysis.
+- **Contributor Guide** (`docs/SatoshiShield_Contributor_Guide_v1_4.docx`) covering the full research methodology, tools reference, and quarterly research protocol.
+- **Monitor Deployment Guide** (`docs/SatoshiShield_Monitor_Deployment_v1_4.docx`) covering installation and configuration of the optional monthly monitoring tool.
+- **Quarterly Checklist** (`docs/SatoshiShield_Quarterly_Checklist_v1_4.docx`), a structured research protocol for contribution cycles.
 - **CONTRIBUTING.md** quick-reference guide for submitting domains.
 - **MIT License.**
 
