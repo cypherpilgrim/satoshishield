@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ---
 
+## [1.4.3] — 2026-05-19
+
+### Fixed
+
+- **White Paper duplicate Section 8 numbering.** The white paper had two H1 headings numbered "8": Section 8 (Frequently Asked Questions) and Section 8 (Adversarial Considerations). This was a numbering bug from the original v1.0 release. Adversarial Considerations is now Section 9, About is Section 10, and License is Section 11. No internal cross-references to "Section 8" existed, so no other content needed updating.
+- **Stale Document Version tables in three legacy docx files.** The White Paper, Contributor Guide, and Quarterly Checklist all had Document Version tables that listed only v1.0, despite the cover pages saying v1.4. All three now have v1.4 rows documenting what changed in v1.4 (GitHub handle migration, cover/header/footer version updates, section renumbering where applicable). The Monitor Deployment Guide already had a v1.4 row because it was rebuilt from scratch in v1.4.
+- **Quarterly Checklist cover page missing version stamp.** The other three legacy docx files have versions on their covers; the Quarterly Checklist did not. The subtitle line now reads "Run every 90 days  |  Estimated time: 2–4 hours  |  v1.4  |  May 2026".
+- **CHANGELOG cross-reference to White Paper Section 9.** The v1.4 entry referenced "Section 9" for the About section, which becomes Section 10 after the renumbering above. The reference now just says "the About section" to avoid section-number fragility.
+
+### Notes
+
+- No changes to blocklist content, CSV evidence, or monitor script. All fixes are docx-internal and one CHANGELOG line.
+- Round 6 audit also flagged the White Paper roadmap (Section 7) as historically inaccurate, since the project shipped v1.1 through v1.4.2 in days rather than across the projected months. The roadmap content is still useful as a description of future goals, so it's left in place. A future v2.0 white paper revision can refresh the roadmap entirely.
+
+---
+
 ## [1.4.2] — 2026-05-19
 
 ### Fixed
@@ -55,7 +71,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - **LICENSE copyright notice updated.** Changed `Copyright (c) 2026 sawdustpilgrim` to `Copyright (c) 2026 cypherpilgrim` to match the active GitHub identity.
 - **White Paper Table 5 updated.** Glassnode and Nansen entries now note their promotion to Tier 1 in v1.1, rather than implying they are still Tier 2 as in the original v1.0 white paper.
 - **White Paper Section 4.4 clarified.** The phrase "Version 1.0 of SatoshiShield includes the following domain categories" has been rewritten to make clear that the listing describes the initial release state, with a pointer to the CHANGELOG for current state.
-- **White Paper About section.** A geographic reference in Section 9 has been genericized to remove potentially identifying information about the maintainer's region.
+- **White Paper About section.** A geographic reference in the About section has been genericized to remove potentially identifying information about the maintainer's region.
 
 ### Changed
 
