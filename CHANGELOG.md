@@ -6,6 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ---
 
+## [1.4.4] — 2026-05-19
+
+### Fixed
+
+- **Regression from v1.4.3: White Paper subsections 8.1 through 8.8 were not renumbered.** The v1.4.3 patch renumbered the H1 heading "8. Adversarial Considerations" to "9. Adversarial Considerations" but missed the eight H2 subsections beneath it. Readers saw Section 9 with subsections labelled 8.1, 8.2, etc. All eight subsections now correctly read 9.1 through 9.8.
+- **README TOC missing Project Identity.** The Project Identity section at the end of the README was not listed in the Table of Contents. Now added.
+
+### Notes
+
+- No changes to blocklist content, CSV evidence, or monitor script. All fixes are documentation.
+- This release exists because a regression was introduced in v1.4.3. The audit pipeline caught it before it sat unfixed in the public repo for long.
+
+---
+
 ## [1.4.3] — 2026-05-19
 
 ### Fixed

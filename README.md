@@ -22,6 +22,7 @@ SatoshiShield is a curated, community-maintained DNS blocklist that prevents org
 - [Known Limitations](#known-limitations)
 - [Contributing](#contributing)
 - [License](#license)
+- [Project Identity](#project-identity)
 
 ---
 
