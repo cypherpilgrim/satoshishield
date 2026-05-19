@@ -6,11 +6,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ---
 
+## [1.4.2] — 2026-05-19
+
+### Fixed
+
+- **OPSEC: Sanitized CHANGELOG entries that re-leaked the information being removed.** The v1.4 and v1.4.1 entries previously quoted the exact name and geographic identifier that were being removed from the docx files, undoing the OPSEC fixes. The descriptions have been rewritten to explain what was sanitized without quoting the values.
+- **Firm count corrected.** The README, Privacy Short, and Privacy Deep Dive each described "14 firms" in the Tier 1 list when the actual count is 12 distinct organizations across 14 root domain patterns. Chainalysis owns Transpose; Crystal Blockchain owns BitRank. The wording now reads "12 firms across 14 root domains" or "14 root domain patterns" depending on context.
+- **README "What Gets Blocked" table row grouping made consistent.** Chainalysis was previously split into two rows (one for `chainalysis.com`, one for `transpose.io`) while Crystal Blockchain was already grouped into a single row with both its domains. The Chainalysis row now matches the Crystal Blockchain pattern, giving the table exactly 12 rows that each represent one organization.
+
+### Notes
+
+- No changes to blocklist content, CSV evidence, or monitor script. All fixes are documentation and metadata.
+- An audit also flagged the TOC anchor `#two-tiers--start-with-tier-1` (double dash) as potentially broken on GitHub, but the original anchor was confirmed correct after testing GitHub's actual slugger algorithm against the heading. No change needed.
+
+---
+
 ## [1.4.1] — 2026-05-19
 
 ### Fixed
 
-- **OPSEC: Removed maintainer's real name from docx metadata.** `Why_Bitcoin_Privacy_Matters_v1_0.docx` had `Stephen Brouillard` in its `last_modified_by` core property field, set automatically when the file was opened in a desktop word processor during review. The file has been regenerated with clean metadata (`Un-named` for both `author` and `last_modified_by`), matching all other docx files in the repository.
+- **OPSEC: Removed maintainer's real name from docx metadata.** One docx file had the maintainer's real name in its `last_modified_by` core property field, set automatically when the file was opened in a desktop word processor during review. The file has been regenerated with clean metadata (`Un-named` for both `author` and `last_modified_by`), matching all other docx files in the repository.
 - **Broken links in CONTRIBUTING.md.** Two references to `SatoshiShield_Contributor_Guide_v1_0.docx` updated to `_v1_4` since the file was renamed in commit `83930dd`.
 - **Broken links in CHANGELOG.md v1.0 entry.** Four file references (White Paper, Contributor Guide, Monitor Deployment Guide, Quarterly Checklist) updated from `_v1_0` to `_v1_4`. The descriptive prose still mentions what was added at v1.0; the links now point to the current filenames.
 
@@ -40,7 +55,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - **LICENSE copyright notice updated.** Changed `Copyright (c) 2026 sawdustpilgrim` to `Copyright (c) 2026 cypherpilgrim` to match the active GitHub identity.
 - **White Paper Table 5 updated.** Glassnode and Nansen entries now note their promotion to Tier 1 in v1.1, rather than implying they are still Tier 2 as in the original v1.0 white paper.
 - **White Paper Section 4.4 clarified.** The phrase "Version 1.0 of SatoshiShield includes the following domain categories" has been rewritten to make clear that the listing describes the initial release state, with a pointer to the CHANGELOG for current state.
-- **White Paper About section.** The reference to "El Salvador" in Section 9 has been genericized to remove geographic identification.
+- **White Paper About section.** A geographic reference in Section 9 has been genericized to remove potentially identifying information about the maintainer's region.
 
 ### Changed
 

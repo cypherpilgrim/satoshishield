@@ -128,7 +128,7 @@ After editing, flush the DNS cache:
 
 ## Pi-hole Regex Deny Rules (Important)
 
-Pi-hole's URL-fetched blocklists silently ignore wildcard entries like `*.chainalysis.com`. To block all subdomains of a surveillance firm (not just the root domain), Pi-hole regex deny rules must be applied separately. The rules in [regex.txt](regex.txt) provide true wildcard coverage for all 14 Tier 1 firms.
+Pi-hole's URL-fetched blocklists silently ignore wildcard entries like `*.chainalysis.com`. To block all subdomains of a surveillance firm (not just the root domain), Pi-hole regex deny rules must be applied separately. The rules in [regex.txt](regex.txt) provide true wildcard coverage for all 14 Tier 1 root domain patterns (covering 12 firms, since Chainalysis owns Transpose and Crystal Blockchain owns BitRank).
 
 ### Option A — Pi-hole Admin UI (Recommended for most users)
 
@@ -217,8 +217,7 @@ In the Pi-hole admin UI, go to **Tools > Query Log** and filter by one of the su
 
 | Organization | Domain | Category | Why |
 |---|---|---|---|
-| Chainalysis | *.chainalysis.com | Blockchain Analytics | Primary surveillance firm. Sells IP-address correlation intelligence to law enforcement and exchanges. |
-| Chainalysis | *.transpose.io | Blockchain Analytics | Chainalysis subsidiary, on-chain data API. |
+| Chainalysis | *.chainalysis.com, *.transpose.io | Blockchain Analytics | Primary surveillance firm. Sells IP-address correlation intelligence to law enforcement and exchanges. Transpose is a Chainalysis subsidiary acquired in 2022. |
 | Elliptic | *.elliptic.co | Blockchain Analytics | Blockchain analytics and compliance. Address screening APIs reveal queried addresses. |
 | TRM Labs | *.trmlabs.com | Blockchain Analytics | AI-driven blockchain intelligence. BLOCKINT API correlates queries with IP addresses. |
 | CipherTrace | *.ciphertrace.com | Blockchain Analytics | Mastercard acquisition. Government and financial institution clients. |
