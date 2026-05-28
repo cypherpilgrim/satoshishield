@@ -39,7 +39,7 @@ Before submitting, complete all six steps:
 - [ ] **WHOIS lookup** — identify the domain owner (`lookup.icann.org`)
 - [ ] **SSL certificate** — confirm organization name (`crt.sh`)
 - [ ] **SecurityTrails / PassiveDNS** — check IP history and related domains (`securitytrails.com`)
-- [ ] **URLScan.io** — analyze what the domain does (`urlscan.io`)
+- [ ] **Behavioral evidence** — observe the domain with URLScan.io for suspected / dual-use / camouflaged domains, OR cite the vendor's own published documentation for firms that openly document their surveillance functions (typical for Tier 1, and the only workable method for authentication-gated endpoints) (`urlscan.io`)
 - [ ] **Privacy harm** — articulate the specific harm in one sentence
 - [ ] **Functional test** — confirm blocking the domain does not break wallet functionality
 
@@ -112,7 +112,7 @@ findings, URLScan analysis, or wallet source code references.]
 - [ ] WHOIS lookup completed
 - [ ] SSL certificate inspected
 - [ ] SecurityTrails / PassiveDNS checked
-- [ ] URLScan.io analysis completed
+- [ ] Behavioral evidence gathered (URLScan.io scan or vendor documentation, per domain type)
 - [ ] Tested that blocking does not break wallet functionality
 
 ## Functional Impact Test

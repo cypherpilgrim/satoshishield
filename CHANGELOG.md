@@ -6,6 +6,28 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ---
 
+## [1.4.5] — 2026-05-28
+
+### Fixed
+
+- **Contributor Guide CSV schema was out of sync with the data.** Section 5.1 documented a 7-column schema (`domain,organization,category,harm,source,date_verified,notes`), but `domains.csv` and CONTRIBUTING.md use 8 columns with a `tier` field after `category`. A contributor following the Guide would have produced rows that misalign every field after `category`. Section 5.1 now documents the 8-column schema with a `tier` row in the column table and a corrected example, in the comma-free unquoted house style the live file uses.
+- **Contributor Guide allowed-category list was missing a category in use.** Section 5.1 listed six categories and omitted `Surveillance Analytics`, which the live data uses (Nansen). The list now matches CONTRIBUTING.md and the data.
+- **White Paper Glassnode category contradicted the data.** Section 4.4 labelled Glassnode `Market Surveillance`, a value in no canonical list; `domains.csv` and the README file it as `Blockchain Analytics`. The White Paper now matches.
+- **Monitor Report Reading Guide pointed at a superseded version.** Its footer referenced "Monitor Deployment Guide v1.0"; that guide is v1.4. Updated.
+- **Monitor script category labels drifted from canonical.** `satoshishield_monitor.py` tagged Scorechain `KYC/AML` (canonical `KYC/AML Compliance`) and Glassnode `Market Surveillance` (data: `Blockchain Analytics`). Both aligned; dict column alignment preserved.
+
+### Changed
+
+- **Verification Step 4 reframed from "URLScan.io Analysis" to "Behavioral Evidence."** The underlying requirement was always behavioral evidence of the surveillance function; URLScan.io is one method for obtaining it, not the requirement itself. The step now states that the method follows the domain type: URLScan.io (or traffic capture) is required for suspected, dual-use, or camouflaged domains where the behavior must be observed; the vendor's own published documentation is the appropriate evidence for firms that openly document their surveillance functions (typical for Tier 1) and the only workable method for authentication-gated API endpoints an unauthenticated scan cannot reach. Applied consistently across Contributor Guide §4.4, its PR template and Appendix B checklist, and CONTRIBUTING.md's verification steps and PR template. The Quarterly Checklist and the research vault template carry the same reframe.
+- **Contributor Guide §5.1 note added** clarifying that the descriptive inclusion-criteria names in §2 map to the canonical `category` field values in §5.1.
+
+### Notes
+
+- No changes to blocklist content, CSV evidence, or the set of blocked domains. All fixes are documentation, one process reframe, and two metadata labels in the monitor script.
+- docx filenames and cover/header/footer "v1.4" stamps are unchanged; this patch is tracked here in the CHANGELOG, consistent with v1.4.1 through v1.4.4.
+
+---
+
 ## [1.4.4] — 2026-05-19
 
 ### Fixed

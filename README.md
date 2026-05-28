@@ -309,6 +309,8 @@ Full documentation lives in the `docs/` directory:
 |---|---|---|
 | [Why Bitcoin Privacy Matters](docs/Why_Bitcoin_Privacy_Matters_v1_0.docx) | All readers | Short guide explaining the Bitcoin surveillance industry and what it means for users |
 | [Why Bitcoin Privacy Matters: Deep Dive](docs/Why_Bitcoin_Privacy_Matters_Deep_Dive_v1_0.docx) | Readers wanting more depth | Same topics, longer treatment with sources and case studies |
+| [Case Study: IRS Privacy-Coin Tracing Contract](docs/IRS_Privacy_Coin_Tracing_Case_Study.docx) | Readers wanting evidence | The 2020 IRS-CI contract to Chainalysis and Integra FEC to trace Monero and the Lightning Network, from the public procurement record |
+| [Case Study: Federal Surveillance Procurement Stack](docs/IRS_Procurement_Landscape_Followup.docx) | Readers wanting evidence | A 2018–2025 survey of U.S. government contracts to trace, de-anonymize, and attribute cryptocurrency transactions |
 | [White Paper](docs/SatoshiShield_WhitePaper_v1_4.docx) | Technical readers | Full project rationale, architecture, methodology, and adversarial analysis |
 | [Contributor Guide](docs/SatoshiShield_Contributor_Guide_v1_4.docx) | Contributors | Full research methodology, tools reference, and submission process |
 | [Monitor Deployment Guide](docs/SatoshiShield_Monitor_Deployment_v1_4.docx) | Operators | How to install and configure the optional monitoring script |

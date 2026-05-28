@@ -93,12 +93,12 @@ SURVEILLANCE_PATTERNS = {
     r"(?:\.|^)arkm\.com$":             ("Arkham",            "Deanonymization",      "Publicly markets identity-linking; logs every address lookup"),
     r"(?:\.|^)crystalblockchain\.com$":("Crystal",           "Blockchain Analytics", "Transaction monitoring and risk scoring"),
     r"(?:\.|^)bitrank\.com$":          ("Crystal (BitRank)", "Blockchain Analytics", "BitRank scoring service"),
-    r"(?:\.|^)scorechain\.com$":       ("Scorechain",        "KYC/AML",              "Flags privacy-enhancing transactions including CoinJoin"),
+    r"(?:\.|^)scorechain\.com$":       ("Scorechain",        "KYC/AML Compliance",   "Flags privacy-enhancing transactions including CoinJoin"),
     r"(?:\.|^)merkle\.science$":       ("Merkle Science",    "Blockchain Analytics", "Predictive risk platform; logs address queries"),
     r"(?:\.|^)metasleuth\.io$":        ("MetaSleuth",        "Deanonymization",      "Crypto tracking and investigation platform"),
     r"(?:\.|^)breadcrumbs\.app$":      ("Breadcrumbs",       "Blockchain Analytics", "Free blockchain analytics tool"),
     r"(?:\.|^)nansen\.ai$":            ("Nansen",            "Surveillance Analytics","Wallet labeling and identity profiling"),
-    r"(?:\.|^)glassnode\.com$":        ("Glassnode",         "Market Surveillance",  "On-chain analytics; logs IP against queries"),
+    r"(?:\.|^)glassnode\.com$":        ("Glassnode",         "Blockchain Analytics", "On-chain analytics; logs IP against queries"),
 
     # Tier 2 — Needs verification. Not in ALREADY_BLOCKED above, so any hit
     # here surfaces as a "new" surveillance domain in the report for review.
