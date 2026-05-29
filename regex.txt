@@ -42,3 +42,4 @@
 (\.|^)misttrack\.io$
 (\.|^)uppsalasecurity\.com$
 (\.|^)sentinelprotocol\.io$
+(\.|^)analytics\.coinbase\.com$
