@@ -30,3 +30,4 @@
 (\.|^)blockchaingroup\.io$
 (\.|^)bitrankverified\.com$
 (\.|^)biggdigitalassets\.com$
+(\.|^)bitrace\.io$
