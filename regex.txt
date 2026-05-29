@@ -27,3 +27,6 @@
 (\.|^)glassnode\.com$
 (\.|^)anchain\.ai$
 (\.|^)anchainai\.com$
+(\.|^)blockchaingroup\.io$
+(\.|^)bitrankverified\.com$
+(\.|^)biggdigitalassets\.com$
