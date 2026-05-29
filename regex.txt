@@ -38,3 +38,5 @@
 (\.|^)coinfirm\.com$
 (\.|^)matchsystems\.com$
 (\.|^)cryptoofficer\.ai$
+(\.|^)slowmist\.com$
+(\.|^)misttrack\.io$
