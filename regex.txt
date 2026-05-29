@@ -25,3 +25,5 @@
 (\.|^)breadcrumbs\.app$
 (\.|^)nansen\.ai$
 (\.|^)glassnode\.com$
+(\.|^)anchain\.ai$
+(\.|^)anchainai\.com$
