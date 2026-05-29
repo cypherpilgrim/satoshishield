@@ -34,3 +34,5 @@
 (\.|^)iknaio\.com$
 (\.|^)inca\.digital$
 (\.|^)nterminal\.com$
+(\.|^)lukka\.tech$
+(\.|^)coinfirm\.com$
