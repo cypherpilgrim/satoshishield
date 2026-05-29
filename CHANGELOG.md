@@ -6,6 +6,30 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ---
 
+## [1.5.0] — 2026-05-28
+
+### Added
+
+- **Ten new Tier 1 surveillance vendors** added to the blocklist following structured Step 1–7 verification:
+  - **AnChain.AI** (US; IRS-CI federal contractor, Award 2032H524C00033)
+  - **Bitrace Tech** (Hong Kong; first Asian Tier 1, pure-surveillance KYA API)
+  - **BIGG Digital Assets / Blockchain Intelligence Group** (Canada; publicly traded TSXV: BIGG, three-domain block with explicit Netcoins preservation)
+  - **Coinbase Tracer** (US; ICE/USSS/DEA/IRS federal contractor — first surgical-subdomain block in the project)
+  - **Iknaio Cryptoasset Analytics** (Austria; first European Tier 1 and first academic spin-off; preserves graphsense.org open-source domain)
+  - **Inca Digital** (US; DARPA + CFTC federal contractor)
+  - **Lukka** (US; consolidated with acquired Coinfirm)
+  - **Match Systems** (Singapore/Dubai; Russian/CIS-origin)
+  - **SlowMist** (China; preserves github.com/slowmist open-source repos)
+  - **Uppsala Security** (Korea/Singapore; completes the Match Systems / SlowMist / Uppsala data-federation triangle)
+- Whitestream evaluated and excluded — research determined activities did not meet surveillance inclusion criteria; documented in the vault with status `EXCLUDED FROM BLOCKLIST`.
+- Three new patterns documented across this release: surgical-subdomain blocks for dual-use consumer-facing companies (Coinbase), explicit consumer-exchange preservation under a surveillance parent (BIGG/Netcoins), and commercial-vs-open-source domain separation (Iknaio/GraphSense, SlowMist/github.com).
+
+### Changed
+
+- Tier 1 vendor count: 12 → 22.
+- `domains.csv` data rows: 29 → 65.
+- `regex.txt` patterns: 14 → 32.
+
 ## [1.4.5] — 2026-05-28
 
 ### Fixed
