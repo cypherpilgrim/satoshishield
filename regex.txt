@@ -36,3 +36,5 @@
 (\.|^)nterminal\.com$
 (\.|^)lukka\.tech$
 (\.|^)coinfirm\.com$
+(\.|^)matchsystems\.com$
+(\.|^)cryptoofficer\.ai$
