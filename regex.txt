@@ -31,3 +31,4 @@
 (\.|^)bitrankverified\.com$
 (\.|^)biggdigitalassets\.com$
 (\.|^)bitrace\.io$
+(\.|^)iknaio\.com$
