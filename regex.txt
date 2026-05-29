@@ -40,3 +40,5 @@
 (\.|^)cryptoofficer\.ai$
 (\.|^)slowmist\.com$
 (\.|^)misttrack\.io$
+(\.|^)uppsalasecurity\.com$
+(\.|^)sentinelprotocol\.io$
