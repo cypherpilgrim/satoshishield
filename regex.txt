@@ -32,3 +32,5 @@
 (\.|^)biggdigitalassets\.com$
 (\.|^)bitrace\.io$
 (\.|^)iknaio\.com$
+(\.|^)inca\.digital$
+(\.|^)nterminal\.com$
