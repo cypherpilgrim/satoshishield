@@ -2,26 +2,50 @@
 ! Title: SatoshiShield — Bitcoin Privacy DNS Blocklist (Tier 1)
 ! Description: Blocks blockchain analytics firms and Bitcoin surveillance infrastructure
 ! Homepage: https://github.com/cypherpilgrim/satoshishield
-! Version: 1.3
-! Last modified: 2026-05-19
+! Version: 1.6.0
+! Last modified: 2026-05-31
 ! License: MIT
 !
 ! ABP/AdGuard syntax: || matches the domain and all subdomains
 !
+! --- Address Screening ---
+||anchain.ai^
+||anchainai.com^
+||bitrankverified.com^
+||cryptoofficer.ai^
+||matchsystems.com^
 ! --- Blockchain Analytics ---
+||analytics.coinbase.com^
+||biggdigitalassets.com^
+||bitrace.io^
 ||bitrank.com^
+||blockchaingroup.io^
 ||breadcrumbs.app^
 ||chainalysis.com^
 ||ciphertrace.com^
+||coinfirm.com^
 ||crystalblockchain.com^
+||elementus.io^
 ||elliptic.co^
 ||glassnode.com^
+||iknaio.com^
+||inca.digital^
+||lukka.tech^
 ||merkle.science^
-||nansen.ai^
+||misttrack.io^
+||nterminal.com^
+||sentinelprotocol.io^
+||slowmist.com^
 ||transpose.io^
 ||trmlabs.com^
+||uppsalasecurity.com^
 ! --- Deanonymization ---
 ||arkm.com^
+||intel.arkm.com^
 ||metasleuth.io^
 ! --- KYC/AML Compliance ---
 ||scorechain.com^
+! --- Off-Chain Intelligence ---
+||burst.cloud^
+! --- Surveillance Analytics ---
+||nansen.ai^

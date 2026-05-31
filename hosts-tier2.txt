@@ -1,15 +1,11 @@
 # SatoshiShield — Bitcoin Privacy DNS Blocklist
 # Hosts file format — compatible with Pi-hole v4, Unix/Windows hosts file
-# TIER 2 — Needs verification. Use with caution. May have higher false positive rate.
+# TIER 2 — Needs verification entries.
 # https://github.com/cypherpilgrim/satoshishield
-# Version: 1.3 | Updated: 2026-05-19
+# Version: 1.6.0 | Updated: 2026-05-31
 #
 # NOTE: Hosts file format does not support wildcards.
-# For subdomain coverage, apply Pi-hole regex deny rules.
-#
-# WARNING: Tier 2 entries are flagged NEEDS VERIFICATION. Review domains-tier2.csv
-# before enabling. Some entries (Mixpanel, Amplitude, Segment) are dual-use SDKs
-# that may impact non-Bitcoin applications.
+# For subdomain coverage, apply regex.txt as Pi-hole regex deny rules.
 #
 
 # --- Blockchain Analytics ---

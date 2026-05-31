@@ -2,24 +2,44 @@
 # Hosts file format — compatible with Pi-hole v4, Unix/Windows hosts file
 # TIER 1 — High confidence entries only.
 # https://github.com/cypherpilgrim/satoshishield
-# Version: 1.3 | Updated: 2026-05-19
+# Version: 1.6.0 | Updated: 2026-05-31
 #
 # NOTE: Hosts file format does not support wildcards.
 # For subdomain coverage, apply regex.txt as Pi-hole regex deny rules.
 #
 
+# --- Address Screening ---
+0.0.0.0 anchain.ai
+0.0.0.0 anchainai.com
+0.0.0.0 bitrankverified.com
+0.0.0.0 cryptoofficer.ai
+0.0.0.0 matchsystems.com
+
 # --- Blockchain Analytics ---
+0.0.0.0 analytics.coinbase.com
+0.0.0.0 biggdigitalassets.com
+0.0.0.0 bitrace.io
 0.0.0.0 bitrank.com
+0.0.0.0 blockchaingroup.io
 0.0.0.0 breadcrumbs.app
 0.0.0.0 chainalysis.com
 0.0.0.0 ciphertrace.com
+0.0.0.0 coinfirm.com
 0.0.0.0 crystalblockchain.com
+0.0.0.0 elementus.io
 0.0.0.0 elliptic.co
 0.0.0.0 glassnode.com
+0.0.0.0 iknaio.com
+0.0.0.0 inca.digital
+0.0.0.0 lukka.tech
 0.0.0.0 merkle.science
-0.0.0.0 nansen.ai
+0.0.0.0 misttrack.io
+0.0.0.0 nterminal.com
+0.0.0.0 sentinelprotocol.io
+0.0.0.0 slowmist.com
 0.0.0.0 transpose.io
 0.0.0.0 trmlabs.com
+0.0.0.0 uppsalasecurity.com
 
 # --- Deanonymization ---
 0.0.0.0 arkm.com
@@ -28,3 +48,9 @@
 
 # --- KYC/AML Compliance ---
 0.0.0.0 scorechain.com
+
+# --- Off-Chain Intelligence ---
+0.0.0.0 burst.cloud
+
+# --- Surveillance Analytics ---
+0.0.0.0 nansen.ai

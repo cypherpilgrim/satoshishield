@@ -5,6 +5,23 @@ All notable changes to SatoshiShield are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project loosely follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html), with the convention that the major version reflects breaking changes to the blocklist schema, the minor version reflects new domains or features, and the patch version reflects documentation or non-functional fixes.
 
 ---
+## [1.6.0] - 2026-05-31
+
+### Added
+
+- **Cloudburst Technologies** (`burst.cloud`, `*.burst.cloud`) — NY-based off-chain crypto intelligence platform with strategic Chainalysis partnership. AI-driven autonomous-agent attribution targeting OFAC designation packet generation for law enforcement. First entry in the new "Off-Chain Intelligence" category.
+- **Elementus Inc.** (`elementus.io`, `*.elementus.io`) — NY-based blockchain forensics platform self-marketed as patented wallet-deanonymization technology. Government and institutional customer base. Three-tier AWS-direct production (Global Accelerator + CloudFront + ALB).
+
+### New Categories
+
+- **Off-Chain Intelligence** — Vendors whose product is OSINT-driven attribution of crypto actors via non-blockchain data sources, typically partnering with on-chain analytics vendors rather than competing with them. First entry: Cloudburst Technologies.
+
+### Fixed
+
+- Regenerated all blocklist artifacts (`blocklist.txt`, `hosts.txt`, `satoshishield.abp`, `blocklist-tier2.txt`, `hosts-tier2.txt`, `satoshishield-tier2.abp`, `blocklist-all.txt`) which had been stale since v1.3. The artifacts now reflect all v1.4, v1.5.0, and v1.6.0 entries.
+- Added `build_blocklists.py` to automate artifact regeneration from `domains.csv` and `domains-tier2.csv` going forward.
+
+[1.6.0]: https://github.com/cypherpilgrim/satoshishield/releases/tag/v1.6.0
 
 ## [1.5.0] — 2026-05-28
 
