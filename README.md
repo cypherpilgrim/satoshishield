@@ -312,7 +312,7 @@ The monitor distinguishes two cases:
 
 The monitor uses only Python's standard library and reads all SMTP credentials from a gitignored `.env` file. It does not transmit query data outside the user's network.
 
-For deployment instructions, see the [Monitor Deployment Guide](docs/SatoshiShield_Monitor_Deployment_v1_4.md). For instructions on reading the monthly reports, see the [Monitor Report Reading Guide](monitor/SatoshiShield_Monitor_Report_Reading_Guide_v1_0.docx).
+For deployment instructions, see the [Monitor Deployment Guide](docs/SatoshiShield_Monitor_Deployment_v1_4.md). For instructions on reading the monthly reports, see the [Monitor Report Reading Guide](monitor/SatoshiShield_Monitor_Report_Reading_Guide_v1_0.md).
 
 ---
 
@@ -348,7 +348,7 @@ Full documentation lives in the `docs/` directory:
 | [White Paper](docs/SatoshiShield_WhitePaper_v1_4.md) | Technical readers | Full project rationale, architecture, methodology, and adversarial analysis |
 | [Contributor Guide](docs/SatoshiShield_Contributor_Guide_v1_4.md) | Contributors | Full research methodology, tools reference, and submission process |
 | [Monitor Deployment Guide](docs/SatoshiShield_Monitor_Deployment_v1_4.md) | Operators | How to install and configure the optional monitoring script |
-| [Monitor Report Reading Guide](monitor/SatoshiShield_Monitor_Report_Reading_Guide_v1_0.docx) | Operators | How to read and interpret the monthly monitor reports |
+| [Monitor Report Reading Guide](monitor/SatoshiShield_Monitor_Report_Reading_Guide_v1_0.md) | Operators | How to read and interpret the monthly monitor reports |
 | [Quarterly Checklist](docs/SatoshiShield_Quarterly_Checklist_v1_4.md) | Contributors | Structured research protocol for quarterly contribution cycles |
 | [CHANGELOG](CHANGELOG.md) | All readers | Version history and what changed in each release |
 | [SECURITY](SECURITY.md) | Security researchers | How to report security issues and what counts as one |
