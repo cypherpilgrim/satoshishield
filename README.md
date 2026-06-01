@@ -216,22 +216,36 @@ In the Pi-hole admin UI, go to **Tools > Query Log** and filter by one of the su
 
 ## What Gets Blocked (Tier 1)
 
-| Organization | Domain | Category | Why |
-|---|---|---|---|
-| Chainalysis | *.chainalysis.com, *.transpose.io | Blockchain Analytics | Primary surveillance firm. Sells IP-address correlation intelligence to law enforcement and exchanges. Transpose is a Chainalysis subsidiary acquired in 2022. |
-| Elliptic | *.elliptic.co | Blockchain Analytics | Blockchain analytics and compliance. Address screening APIs reveal queried addresses. |
-| TRM Labs | *.trmlabs.com | Blockchain Analytics | AI-driven blockchain intelligence. BLOCKINT API correlates queries with IP addresses. |
-| CipherTrace | *.ciphertrace.com | Blockchain Analytics | Mastercard acquisition. Government and financial institution clients. |
-| Crystal Blockchain | *.crystalblockchain.com, *.bitrank.com | Blockchain Analytics | Transaction monitoring and risk scoring. |
-| Scorechain | *.scorechain.com | KYC/AML Compliance | Flags CoinJoin transactions as high risk. |
-| Merkle Science | *.merkle.science | Blockchain Analytics | Predictive risk platform logs address queries against IP. |
-| Arkham Intelligence | *.arkm.com, intel.arkm.com | Deanonymization | **CRITICAL** — publicly markets real-world identity linking. |
-| MetaSleuth | *.metasleuth.io | Deanonymization | Crypto tracking and investigation platform. |
-| Breadcrumbs | *.breadcrumbs.app | Blockchain Analytics | Free analytics tool, IP logged against every address query. |
-| Glassnode | *.glassnode.com | Blockchain Analytics | On-chain analytics. IP logged against address and metric queries. |
-| Nansen | *.nansen.ai | Surveillance Analytics | Wallet labeling and identity profiling. |
+The Tier 1 list covers 24 organizations across six surveillance categories. Each entry is documented in [domains.csv](domains.csv) with a one-sentence privacy harm, a source, and a verification date.
 
-**Full domain list with rationale:** [domains.csv](domains.csv) (Tier 1) | [domains-tier2.csv](domains-tier2.csv) (Tier 2)
+| Organization | Domain(s) | Category | Why |
+|---|---|---|---|
+| Chainalysis | `*.chainalysis.com`, `*.transpose.io` | Blockchain Analytics | Largest blockchain surveillance vendor. IRS and FBI customers. Owns Transpose subsidiary (acquired 2022). |
+| Elliptic | `*.elliptic.co` | Blockchain Analytics | UK enterprise analytics. Address screening APIs log queried addresses. |
+| TRM Labs | `*.trmlabs.com` | Blockchain Analytics | AI-driven blockchain intelligence. BLOCKINT API correlates queries with IP. |
+| CipherTrace | `*.ciphertrace.com` | Blockchain Analytics | Mastercard subsidiary (acquired 2021). Federal and financial institution clients. |
+| Crystal Blockchain | `*.crystalblockchain.com`, `*.bitrank.com` | Blockchain Analytics | Transaction monitoring and risk scoring. Also operates BitRank Verified. |
+| Merkle Science | `*.merkle.science` | Blockchain Analytics | Singapore-based predictive risk platform. |
+| Breadcrumbs | `*.breadcrumbs.app` | Blockchain Analytics | Free analytics tool. IP logged against every address query. |
+| Glassnode | `*.glassnode.com` | Blockchain Analytics | Swiss on-chain analytics. IP logged against address and metric queries. |
+| Bitrace | `*.bitrace.io` | Blockchain Analytics | Hong Kong AML/CFT RegTech. KYA API. Hong Kong government customers (HKPF, Customs, SFC, ICAC, HKMA). |
+| Iknaio | `*.iknaio.com` | Blockchain Analytics | Austrian academic spin-off. Commercializes GraphSense (open-source `graphsense.org` not blocked). |
+| Inca Digital | `*.inca.digital`, `*.nterminal.com` | Blockchain Analytics | US federal contractor. DARPA Phase II SBIR and CFTC contracts. |
+| Lukka | `*.lukka.tech`, `*.coinfirm.com` | Blockchain Analytics | NYC institutional crypto data firm. Acquired Coinfirm in 2023. |
+| BIGG Digital Assets | `*.biggdigitalassets.com`, `*.blockchaingroup.io`, `*.bitrankverified.com` | Blockchain Analytics | Publicly-traded parent (TSXV: BIGG). QLUE law-enforcement tool. Explicitly framed CoinJoin as adversarial. Netcoins consumer exchange not blocked. |
+| SlowMist | `*.slowmist.com`, `*.misttrack.io` | Blockchain Analytics | Chinese AML firm. 400M+ labeled addresses. MistTrack MCP server exposes data to AI agents. |
+| Uppsala Security | `*.uppsalasecurity.com`, `*.sentinelprotocol.io` | Blockchain Analytics | Korean-origin AML platform. Samsung Blockchain Wallet integration. INTERPOL GLACY+ trainer. |
+| Cloudburst Technologies | `*.burst.cloud` | Off-Chain Intelligence | NYC-based off-chain attribution platform. Strategic partnership with Chainalysis. Government and law-enforcement customers. |
+| Elementus | `*.elementus.io` | Blockchain Analytics | NYC blockchain forensics. Vendor-admitted de-anonymization on product page. Government and institutional customers. |
+| Arkham Intelligence | `*.arkm.com`, `intel.arkm.com` | Deanonymization | **CRITICAL** — publicly markets real-world identity linking. "Intel-to-Earn" crowdsourced attribution. |
+| MetaSleuth | `*.metasleuth.io` | Deanonymization | BlockSec subsidiary. Crypto wallet investigation platform. |
+| AnChain.AI | `*.anchain.ai`, `*.anchainai.com` | Address Screening | IRS-CI federal contractor. BEI surveillance suite. |
+| Match Systems | `*.matchsystems.com`, `*.cryptoofficer.ai` | Address Screening | Russian/CIS-origin vendor. Dubai operational base. AI Crypto Officer LLM-powered AML product. |
+| Scorechain | `*.scorechain.com` | KYC/AML Compliance | Luxembourg AML platform. Flags CoinJoin transactions as high risk. |
+| Nansen | `*.nansen.ai` | Surveillance Analytics | Wallet labeling and identity profiling. "Smart Money" tracking. |
+| Coinbase Tracer | `*.analytics.coinbase.com` | Blockchain Analytics | Coinbase's surveillance subsidiary (formerly Coinbase Analytics, acquired Neutrino). DHS/ICE, Secret Service, DEA, IRS contracts. **Surgical subdomain block — `coinbase.com` is NOT blocked.** |
+
+**Full domain list with rationale and verification dates:** [domains.csv](domains.csv) (Tier 1) | [domains-tier2.csv](domains-tier2.csv) (Tier 2)
 
 ---
 
