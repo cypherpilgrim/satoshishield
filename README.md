@@ -1,5 +1,9 @@
 # ₿ SatoshiShield — Bitcoin Privacy DNS Blocklist
 
+[![License: MIT](https://img.shields.io/github/license/cypherpilgrim/satoshishield?style=flat-square)](LICENSE)
+[![Latest release](https://img.shields.io/github/v/release/cypherpilgrim/satoshishield?style=flat-square)](https://github.com/cypherpilgrim/satoshishield/releases)
+[![Last commit](https://img.shields.io/github/last-commit/cypherpilgrim/satoshishield?style=flat-square)](https://github.com/cypherpilgrim/satoshishield/commits/main)
+
 **Block blockchain analytics firms, surveillance platforms, and wallet telemetry at the DNS layer.**
 
 SatoshiShield is a curated, community-maintained DNS blocklist that prevents organizations that surveil Bitcoin users from receiving your IP address. Compatible with Pi-hole, AdGuard Home, and any DNS-based ad blocker.
@@ -8,6 +12,7 @@ SatoshiShield is a curated, community-maintained DNS blocklist that prevents org
 
 ## Table of Contents
 
+- [Start Here](#start-here)
 - [Why This Exists](#why-this-exists)
 - [Two Tiers — Start with Tier 1](#two-tiers--start-with-tier-1)
 - [Quick Install](#quick-install)
@@ -26,6 +31,20 @@ SatoshiShield is a curated, community-maintained DNS blocklist that prevents org
 
 ---
 
+## Start Here
+
+If you are new to Bitcoin privacy and want to understand why this project exists, read [**The Background Hum**](docs/SatoshiShield_The_Background_Hum_v1_0.md) first.
+
+It follows one ordinary Bitcoin user — a marketing manager at a regional bank, with about half a Bitcoin saved for his daughter's college fund — through one ordinary Tuesday morning. By sunset, a Bitcoin surveillance company knows his employer, his neighborhood, the names of his wife and daughter, the size of his Bitcoin holdings, the source of every coin he owns, the destinations of every coin he has sent, the hours he sleeps, the routes he commutes, and the schedule on which he checks his balance. He has done nothing wrong. He uses a hardware wallet, does not reuse addresses, does not post about Bitcoin online, and keeps his recovery phrase on stainless steel in a fireproof safe. He thinks of himself as careful.
+
+He has no idea the dossier exists. He will never see it.
+
+The paper takes about twenty minutes to read and assumes no technical knowledge. It is the single best explanation in this project of what Bitcoin surveillance looks like in practice for ordinary people — and why a hardware wallet alone is not enough.
+
+If you already understand the surveillance problem and want to deploy the defense, skip to [Quick Install](#quick-install).
+
+---
+
 ## Why This Exists
 
 When your Bitcoin wallet checks a balance, fetches fee estimates, or broadcasts a transaction, it makes DNS queries. Those queries reveal your IP address to whoever receives them. For many wallets, that receiver is infrastructure operated by companies whose business is correlating your IP address with your Bitcoin activity.
@@ -38,7 +57,7 @@ No connection is established. No data is transmitted. The surveillance firm neve
 
 > SatoshiShield addresses the DNS layer, the earliest point at which Bitcoin surveillance can be interrupted. It complements your node and wallet privacy practices. It does not replace them.
 
-For a full explanation of why Bitcoin privacy matters and what surveillance firms do with the data they collect, see [Why Bitcoin Privacy Matters](docs/Why_Bitcoin_Privacy_Matters_v1_0.docx) (short guide) or the [Deep Dive Edition](docs/Why_Bitcoin_Privacy_Matters_Deep_Dive_v1_0.docx) for more detail.
+For a concrete illustration of what Bitcoin surveillance looks like in practice — and why a hardware wallet alone is not enough — see [The Background Hum](docs/SatoshiShield_The_Background_Hum_v1_0.md). For broader context on the surveillance industry and what it does with the data it collects, see [Why Bitcoin Privacy Matters](docs/Why_Bitcoin_Privacy_Matters_v1_0.md) (short guide) or the [Deep Dive Edition](docs/Why_Bitcoin_Privacy_Matters_Deep_Dive_v1_0.md) for more detail.
 
 ---
 
@@ -293,7 +312,7 @@ The monitor distinguishes two cases:
 
 The monitor uses only Python's standard library and reads all SMTP credentials from a gitignored `.env` file. It does not transmit query data outside the user's network.
 
-For deployment instructions, see the [Monitor Deployment Guide](docs/SatoshiShield_Monitor_Deployment_v1_4.docx). For instructions on reading the monthly reports, see the [Monitor Report Reading Guide](monitor/SatoshiShield_Monitor_Report_Reading_Guide_v1_0.docx).
+For deployment instructions, see the [Monitor Deployment Guide](docs/SatoshiShield_Monitor_Deployment_v1_4.md). For instructions on reading the monthly reports, see the [Monitor Report Reading Guide](monitor/SatoshiShield_Monitor_Report_Reading_Guide_v1_0.docx).
 
 ---
 
@@ -321,15 +340,16 @@ Full documentation lives in the `docs/` directory:
 
 | Document | For | What It Covers |
 |---|---|---|
-| [Why Bitcoin Privacy Matters](docs/Why_Bitcoin_Privacy_Matters_v1_0.docx) | All readers | Short guide explaining the Bitcoin surveillance industry and what it means for users |
-| [Why Bitcoin Privacy Matters: Deep Dive](docs/Why_Bitcoin_Privacy_Matters_Deep_Dive_v1_0.docx) | Readers wanting more depth | Same topics, longer treatment with sources and case studies |
-| [Case Study: IRS Privacy-Coin Tracing Contract](docs/IRS_Privacy_Coin_Tracing_Case_Study.docx) | Readers wanting evidence | The 2020 IRS-CI contract to Chainalysis and Integra FEC to trace Monero and the Lightning Network, from the public procurement record |
-| [Case Study: Federal Surveillance Procurement Stack](docs/IRS_Procurement_Landscape_Followup.docx) | Readers wanting evidence | A 2018–2025 survey of U.S. government contracts to trace, de-anonymize, and attribute cryptocurrency transactions |
-| [White Paper](docs/SatoshiShield_WhitePaper_v1_4.docx) | Technical readers | Full project rationale, architecture, methodology, and adversarial analysis |
-| [Contributor Guide](docs/SatoshiShield_Contributor_Guide_v1_4.docx) | Contributors | Full research methodology, tools reference, and submission process |
-| [Monitor Deployment Guide](docs/SatoshiShield_Monitor_Deployment_v1_4.docx) | Operators | How to install and configure the optional monitoring script |
+| [The Background Hum](docs/SatoshiShield_The_Background_Hum_v1_0.md) | Readers new to Bitcoin privacy | One ordinary Bitcoin user, one ordinary Tuesday, and what a surveillance company already knows about him by sunset. Twenty-minute read. No technical background required. The single best introduction to what Bitcoin surveillance looks like in practice. **Start here.** |
+| [Why Bitcoin Privacy Matters](docs/Why_Bitcoin_Privacy_Matters_v1_0.md) | Readers wanting broader context | Short guide explaining the Bitcoin surveillance industry and what it means for users |
+| [Why Bitcoin Privacy Matters: Deep Dive](docs/Why_Bitcoin_Privacy_Matters_Deep_Dive_v1_0.md) | Readers wanting more depth | Same topics, longer treatment with sources and case studies |
+| [Case Study: IRS Privacy-Coin Tracing Contract](docs/IRS_Privacy_Coin_Tracing_Case_Study.md) | Readers wanting evidence | The 2020 IRS-CI contract to Chainalysis and Integra FEC to trace Monero and the Lightning Network, from the public procurement record |
+| [Case Study: Federal Surveillance Procurement Stack](docs/IRS_Procurement_Landscape_Followup.md) | Readers wanting evidence | A 2018–2025 survey of U.S. government contracts to trace, de-anonymize, and attribute cryptocurrency transactions |
+| [White Paper](docs/SatoshiShield_WhitePaper_v1_4.md) | Technical readers | Full project rationale, architecture, methodology, and adversarial analysis |
+| [Contributor Guide](docs/SatoshiShield_Contributor_Guide_v1_4.md) | Contributors | Full research methodology, tools reference, and submission process |
+| [Monitor Deployment Guide](docs/SatoshiShield_Monitor_Deployment_v1_4.md) | Operators | How to install and configure the optional monitoring script |
 | [Monitor Report Reading Guide](monitor/SatoshiShield_Monitor_Report_Reading_Guide_v1_0.docx) | Operators | How to read and interpret the monthly monitor reports |
-| [Quarterly Checklist](docs/SatoshiShield_Quarterly_Checklist_v1_4.docx) | Contributors | Structured research protocol for quarterly contribution cycles |
+| [Quarterly Checklist](docs/SatoshiShield_Quarterly_Checklist_v1_4.md) | Contributors | Structured research protocol for quarterly contribution cycles |
 | [CHANGELOG](CHANGELOG.md) | All readers | Version history and what changed in each release |
 | [SECURITY](SECURITY.md) | Security researchers | How to report security issues and what counts as one |
 
@@ -342,7 +362,7 @@ Full documentation lives in the `docs/` directory:
 - **Browser DNS-over-HTTPS** — Browsers configured to use DNS-over-HTTPS (DoH) bypass the system resolver and therefore bypass Pi-hole and AdGuard Home. DoH should be disabled or configured to use Pi-hole as its upstream.
 - **Tier 2 entries** — Domains in Tier 2 need further community verification before being promoted to Tier 1. Review before enabling.
 
-See the [White Paper](docs/SatoshiShield_WhitePaper_v1_4.docx) for a full adversarial analysis.
+See the [White Paper](docs/SatoshiShield_WhitePaper_v1_4.md) for a full adversarial analysis.
 
 ---
 
@@ -355,7 +375,7 @@ SatoshiShield grows through community research. If you discover a surveillance d
 3. Document your findings and open a pull request
 
 **Full research methodology:** [CONTRIBUTING.md](CONTRIBUTING.md)  
-**Quarterly research protocol:** [Contributor Guide](docs/SatoshiShield_Contributor_Guide_v1_4.docx)
+**Quarterly research protocol:** [Contributor Guide](docs/SatoshiShield_Contributor_Guide_v1_4.md)
 
 ---
 
