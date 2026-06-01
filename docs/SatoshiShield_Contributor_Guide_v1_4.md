@@ -96,18 +96,11 @@ This shows only DNS queries. Look for domains that appear after the wallet opene
 
 To isolate only traffic from the wallet process, use display filters:
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>dns.qry.name contains "analytics"</p>
-<p>dns.qry.name contains "chainalysis"</p>
-<p>dns.qry.name contains "tracking"</p></td>
-</tr>
-</tbody>
-</table>
+```
+dns.qry.name contains "analytics"
+dns.qry.name contains "chainalysis"
+dns.qry.name contains "tracking"
+```
 
 **Step 6 — Export results**
 
@@ -125,22 +118,15 @@ Most popular wallets have public GitHub repositories. Search for the wallet name
 
 Use GitHub's code search within the repository. Search for:
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>https://api</p>
-<p>analytics</p>
-<p>telemetry</p>
-<p>tracking</p>
-<p>mixpanel</p>
-<p>amplitude</p>
-<p>segment</p></td>
-</tr>
-</tbody>
-</table>
+```
+https://api
+analytics
+telemetry
+tracking
+mixpanel
+amplitude
+segment
+```
 
 **Step 3 — Review network configuration files**
 
@@ -336,20 +322,13 @@ The CSV columns are:
 
 **Example entry**
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>domain,organization,category,tier,harm,source,date_verified,notes</p>
-<p>*.chainalysis.com,Chainalysis Inc.,Blockchain Analytics,1,"Logs querying IP addresses against</p>
-<p>Bitcoin address lookup requests. Sells intelligence to law enforcement and</p>
-<p>exchanges.",https://www.chainalysis.com/reactor/,2026-05-04,"Also operates</p>
-<p>transpose.io (acquired 2022)"</p></td>
-</tr>
-</tbody>
-</table>
+```
+domain,organization,category,tier,harm,source,date_verified,notes
+*.chainalysis.com,Chainalysis Inc.,Blockchain Analytics,1,"Logs querying IP addresses against
+Bitcoin address lookup requests. Sells intelligence to law enforcement and
+exchanges.",https://www.chainalysis.com/reactor/,2026-05-04,"Also operates
+transpose.io (acquired 2022)"
+```
 
 ### 5.2 Wildcard vs Exact Domain
 
@@ -385,17 +364,10 @@ All submissions go through GitHub pull requests. This section walks through the 
 
 ### 6.3 Clone Your Fork
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>git clone https://github.com/YOUR-USERNAME/satoshishield.git</p>
-<p>cd satoshishield</p></td>
-</tr>
-</tbody>
-</table>
+```
+git clone https://github.com/YOUR-USERNAME/satoshishield.git
+cd satoshishield
+```
 
 ### 6.4 Create a Branch
 
@@ -407,17 +379,10 @@ Always create a new branch for your submission. Use a descriptive name:
 
 Edit domains.csv and add your entry. Follow the format exactly — CSV is whitespace-sensitive.
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p># Open in any text editor</p>
-<p>nano domains.csv</p></td>
-</tr>
-</tbody>
-</table>
+```
+# Open in any text editor
+nano domains.csv
+```
 
 Add your row at the bottom of the file. Save.
 
@@ -425,18 +390,11 @@ The three blocklist files (blocklist.txt, hosts.txt, satoshishield.abp) are gene
 
 ### 6.6 Commit and Push
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>git add domains.csv</p>
-<p>git commit -m "Add [domain]: [one-line description of harm]"</p>
-<p>git push origin add-domain-suspicious-analytics-com</p></td>
-</tr>
-</tbody>
-</table>
+```
+git add domains.csv
+git commit -m "Add [domain]: [one-line description of harm]"
+git push origin add-domain-suspicious-analytics-com
+```
 
 ### 6.7 Open a Pull Request
 
@@ -452,34 +410,27 @@ The three blocklist files (blocklist.txt, hosts.txt, satoshishield.abp) are gene
 
 Every pull request should include the following information:
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>## Domain Submission</p>
-<p>**Domain:** *.suspicious-analytics.com</p>
-<p>**Organization:** Suspicious Analytics Inc.</p>
-<p>**Category:** Blockchain Analytics</p>
-<p>## Evidence of Privacy Harm</p>
-<p>[Describe what you found and how you found it. Include links to</p>
-<p>sources, screenshots of WHOIS/SSL certificate results, URLScan</p>
-<p>analysis, or wallet source code references.]</p>
-<p>## Verification Steps Completed</p>
-<p>- [ ] WHOIS lookup performed</p>
-<p>- [ ] SSL certificate inspected</p>
-<p>- [ ] SecurityTrails / PassiveDNS checked</p>
-<p>- [ ] Behavioral evidence gathered — URLScan.io scan (suspected / dual-use domains) or vendor documentation (self-documented / Tier 1 firms)</p>
-<p>- [ ] Tested that blocking does not break wallet functionality</p>
-<p>## Functional Impact Test</p>
-<p>[Describe how you tested that blocking the domain does not impair</p>
-<p>Bitcoin wallet functionality. Which wallet? What functions tested?]</p>
-<p>## domains.csv Entry</p>
-<p>[Paste your CSV row here for review]</p></td>
-</tr>
-</tbody>
-</table>
+```
+## Domain Submission
+**Domain:** *.suspicious-analytics.com
+**Organization:** Suspicious Analytics Inc.
+**Category:** Blockchain Analytics
+## Evidence of Privacy Harm
+[Describe what you found and how you found it. Include links to
+sources, screenshots of WHOIS/SSL certificate results, URLScan
+analysis, or wallet source code references.]
+## Verification Steps Completed
+- [ ] WHOIS lookup performed
+- [ ] SSL certificate inspected
+- [ ] SecurityTrails / PassiveDNS checked
+- [ ] Behavioral evidence gathered — URLScan.io scan (suspected / dual-use domains) or vendor documentation (self-documented / Tier 1 firms)
+- [ ] Tested that blocking does not break wallet functionality
+## Functional Impact Test
+[Describe how you tested that blocking the domain does not impair
+Bitcoin wallet functionality. Which wallet? What functions tested?]
+## domains.csv Entry
+[Paste your CSV row here for review]
+```
 
 ## 7. What Happens After You Submit
 

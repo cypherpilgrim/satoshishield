@@ -4,7 +4,7 @@
 [![Latest release](https://img.shields.io/github/v/release/cypherpilgrim/satoshishield?style=flat-square)](https://github.com/cypherpilgrim/satoshishield/releases)
 [![Last commit](https://img.shields.io/github/last-commit/cypherpilgrim/satoshishield?style=flat-square)](https://github.com/cypherpilgrim/satoshishield/commits/main)
 
-**Block blockchain analytics firms, surveillance platforms, and wallet telemetry at the DNS layer.**
+**Bitcoin privacy DNS blocklist for Pi-hole and AdGuard Home. Blocks blockchain analytics firms, surveillance platforms, and wallet telemetry.**
 
 SatoshiShield is a curated, community-maintained DNS blocklist that prevents organizations that surveil Bitcoin users from receiving your IP address. Compatible with Pi-hole, AdGuard Home, and any DNS-based ad blocker.
 
