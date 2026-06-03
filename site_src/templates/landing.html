@@ -7,6 +7,15 @@
 <meta name="description" content="A curated DNS blocklist that stops Bitcoin surveillance firms from receiving your IP address. For Pi-hole and AdGuard Home.">
 <meta name="referrer" content="no-referrer">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="icon" type="image/png" href="assets/logo-web.png">
+<style>
+  .hero-logo{display:block;height:170px;width:auto;margin:0 0 32px;
+    filter:drop-shadow(0 8px 28px rgba(0,0,0,.5));
+    animation:logo-in .9s ease-out both;}
+  @media (max-width:600px){.hero-logo{height:124px;}}
+  @keyframes logo-in{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  @media (prefers-reduced-motion:reduce){.hero-logo{animation:none;opacity:1;transform:none;}}
+</style>
 </head>
 <body>
 <header class="topbar"><div class="wrap">
@@ -22,6 +31,7 @@
 
 <!-- ============================ HERO ============================ -->
 <section class="hero"><div class="wrap">
+  <img class="hero-logo" src="assets/logo-web.png" alt="SatoshiShield — a shield bearing the Bitcoin symbol">
   <div class="kicker">Bitcoin privacy &middot; DNS layer &middot; Pi-hole + AdGuard Home</div>
   <h1>Silence the <span class="b">background hum</span>.</h1>
   <p class="tagline">Every balance check and broadcast your wallet makes is a DNS query &mdash; and surveillance firms are listening. SatoshiShield <em>drops those queries before they leave your network.</em></p>
