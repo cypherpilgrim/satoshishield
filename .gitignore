@@ -3,3 +3,4 @@
 # Monitor credentials
 monitor/.env
 /opt/satoshishield/.env
+/site/

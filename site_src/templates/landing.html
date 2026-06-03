@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SatoshiShield — Bitcoin Privacy DNS Blocklist</title>
+<meta name="description" content="A curated DNS blocklist that stops Bitcoin surveillance firms from receiving your IP address. For Pi-hole and AdGuard Home.">
+<meta name="referrer" content="no-referrer">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html"><span class="b">&#8383;</span> SatoshiShield</a>
+  <nav class="topnav">
+    <a href="SatoshiShield_The_Background_Hum_v1_0.html">Start</a>
+    <a href="#blocked">What's blocked</a>
+    <a href="#install">Install</a>
+    <a href="#docs">Docs</a>
+    <a href="https://github.com/cypherpilgrim/satoshishield">GitHub</a>
+  </nav>
+</div></header>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero"><div class="wrap">
+  <div class="kicker">Bitcoin privacy &middot; DNS layer &middot; Pi-hole + AdGuard Home</div>
+  <h1>Silence the <span class="b">background hum</span>.</h1>
+  <p class="tagline">Every balance check and broadcast your wallet makes is a DNS query &mdash; and surveillance firms are listening. SatoshiShield <em>drops those queries before they leave your network.</em></p>
+  <p class="sub">A curated, community-maintained blocklist that prevents the companies whose business is correlating your IP address with your Bitcoin activity from ever receiving it. No connection established. No data transmitted. They never see your IP.</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="SatoshiShield_The_Background_Hum_v1_0.html">Read The Background Hum &rarr;</a>
+    <a class="btn btn-ghost" href="#install">Install in two minutes</a>
+  </div>
+
+  <svg class="hum" viewBox="0 0 1000 70" preserveAspectRatio="none" role="img" aria-label="A surveillance signal decaying into silence">
+    <line class="flat" x1="0" y1="35" x2="1000" y2="35" stroke-width="1"/>
+    <path class="wave" d="M0,35 C30,7 60,7 90,35 S150,63 180,35 S240,13 270,35 S330,57 360,35 S420,23 450,35 S510,47 540,35 S600,30 630,35 S690,40 720,35 L1000,35"/>
+    <text class="hum-label" x="2" y="62">the hum</text>
+    <text class="hum-label" x="998" y="62" text-anchor="end">silence</text>
+  </svg>
+</div></section>
+
+<!-- ============================ WHY ============================ -->
+<section class="band" id="why"><div class="wrap">
+  <div class="kicker">Why this exists</div>
+  <h2>The earliest point surveillance can be interrupted</h2>
+  <p class="lede">When your wallet checks a balance, fetches fee estimates, or broadcasts a transaction, it makes DNS queries. Those queries reveal your IP address to whoever receives them &mdash; and for many wallets, that receiver is infrastructure operated by Chainalysis, Elliptic, TRM Labs, Arkham, and others who log your IP against every address you query and sell the result to exchanges, banks, and law enforcement.</p>
+  <blockquote class="pull" style="font-family:var(--serif);font-style:italic;font-size:21px;color:var(--ink);border-left:3px solid var(--accent);padding-left:20px;max-width:60ch;">SatoshiShield addresses the DNS layer. It complements your node and wallet privacy practices. It does not replace them.</blockquote>
+</div></section>
+
+<!-- ====================== FEATURE: BACKGROUND HUM ====================== -->
+<section class="band" id="start"><div class="wrap">
+  <div class="kicker">Start here</div>
+  <h2 style="margin-bottom:28px;">If you read one thing, read this</h2>
+  <div class="feature">
+    <div class="body">
+      <div class="kicker">Case study</div>
+      <h3>The Background Hum</h3>
+      <p>It follows one ordinary Bitcoin user &mdash; a marketing manager with about half a bitcoin saved for his daughter's college fund &mdash; through one ordinary Tuesday morning.</p>
+      <p>By sunset, a surveillance company knows his employer, his neighborhood, the names of his wife and daughter, the size of his holdings, the source of every coin he owns, and the schedule on which he checks his balance. He has done nothing wrong. He uses a hardware wallet. He thinks of himself as careful.</p>
+      <p class="pull">He has no idea the dossier exists. He will never see it.</p>
+    </div>
+    <div class="side">
+      <div class="stat"><span class="n">20</span><span class="l">minute read</span></div>
+      <div class="stat"><span class="n">0</span><span class="l">technical background needed</span></div>
+      <a class="btn btn-primary" href="SatoshiShield_The_Background_Hum_v1_0.html" style="margin-top:8px;">Read it &rarr;</a>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============================ BLOCKED ============================ -->
+<section class="band" id="blocked"><div class="wrap">
+  <div class="kicker">What gets blocked &middot; Tier 1</div>
+  <h2>24 organizations, six categories of surveillance</h2>
+  <p class="lede">Each entry is documented with a one-sentence privacy harm, a source, and a verification date. The list is precise: it does not block Bitcoin peers, privacy-respecting explorers, exchange websites, wallet downloads, or Lightning infrastructure.</p>
+  <div class="cats">
+    <div class="cat"><div class="num">01</div><h4>Blockchain Analytics</h4><p>Correlate your IP with every address and transaction you look up. Chainalysis, Elliptic, TRM Labs, CipherTrace, and others.</p></div>
+    <div class="cat"><div class="num">02</div><h4>Deanonymization</h4><p>Publicly market linking on-chain addresses to real-world identities. Arkham Intelligence, MetaSleuth.</p></div>
+    <div class="cat"><div class="num">03</div><h4>Address Screening</h4><p>Score and flag addresses on demand, logging who asked about what. AnChain.AI, Match Systems.</p></div>
+    <div class="cat"><div class="num">04</div><h4>KYC / AML Compliance</h4><p>Flag CoinJoin and ordinary privacy techniques as "high risk." Scorechain.</p></div>
+    <div class="cat"><div class="num">05</div><h4>Off-Chain Intelligence</h4><p>Attribute activity using data gathered from outside the chain. Cloudburst Technologies.</p></div>
+    <div class="cat"><div class="num">06</div><h4>Surveillance Analytics</h4><p>Wallet labeling and "smart money" identity profiling sold as market intelligence. Nansen.</p></div>
+  </div>
+  <p style="margin-top:28px;font-family:var(--mono);font-size:13.5px;">
+    &rarr; <a href="https://github.com/cypherpilgrim/satoshishield/blob/main/domains.csv">Full domain list with rationale and verification dates (domains.csv)</a>
+  </p>
+</div></section>
+
+<!-- ============================ INSTALL ============================ -->
+<section class="band" id="install"><div class="wrap">
+  <div class="kicker">Quick install</div>
+  <h2>Two minutes, then verify</h2>
+  <p class="lede">Add the Tier 1 list to your DNS blocker and update. Pi-hole users must also apply the regex deny rules so wildcard entries take effect &mdash; see the README for the exact steps.</p>
+  <div class="install">
+    <div class="step">
+      <div class="t">Pi-hole &mdash; Settings &gt; Blocklists &gt; Add, then <code style="display:inline;color:var(--ink-dim);border:none;background:none;padding:0;">pihole -g</code></div>
+      <code class="codeline">https://raw.githubusercontent.com/cypherpilgrim/satoshishield/main/blocklist.txt</code>
+    </div>
+    <div class="step">
+      <div class="t">AdGuard Home &mdash; Filters &gt; DNS Blocklists &gt; Add a custom list</div>
+      <code class="codeline">https://raw.githubusercontent.com/cypherpilgrim/satoshishield/main/satoshishield.abp</code>
+    </div>
+    <div class="step">
+      <div class="t">Verify it is working (should return 0.0.0.0 or nothing)</div>
+      <code class="codeline">dig api.chainalysis.com +short</code>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============================ DOCS ============================ -->
+<section class="band" id="docs"><div class="wrap">
+  <div class="kicker">Documentation</div>
+  <h2>Read the evidence, deploy the defense</h2>
+  <div class="cats" style="grid-template-columns:1fr 1fr;">
+    <div class="cat"><div class="num">Case study</div><h4><a href="SatoshiShield_The_Background_Hum_v1_0.html">The Background Hum</a></h4><p>What surveillance looks like in practice for one ordinary user. Start here.</p></div>
+    <div class="cat"><div class="num">Primer</div><h4><a href="Why_Bitcoin_Privacy_Matters_v1_0.html">Why Bitcoin Privacy Matters</a></h4><p>The surveillance industry and what it means for you. Short guide, plus a deep-dive edition.</p></div>
+    <div class="cat"><div class="num">Evidence</div><h4><a href="IRS_Privacy_Coin_Tracing_Case_Study.html">IRS Privacy-Coin Tracing</a></h4><p>The 2020 IRS-CI contract to trace Monero and Lightning, from the public record.</p></div>
+    <div class="cat"><div class="num">Evidence</div><h4><a href="IRS_Procurement_Landscape_Followup.html">Federal Procurement Stack</a></h4><p>A 2018&ndash;2025 survey of U.S. contracts to trace and de-anonymize crypto.</p></div>
+    <div class="cat"><div class="num">Technical</div><h4><a href="SatoshiShield_WhitePaper_v1_4.html">White Paper</a></h4><p>Full rationale, architecture, methodology, and adversarial analysis.</p></div>
+    <div class="cat"><div class="num">Contribute</div><h4><a href="SatoshiShield_Contributor_Guide_v1_4.html">Contributor Guide</a></h4><p>Research methodology, tools, and the domain submission process.</p></div>
+  </div>
+</div></section>
+
+<footer class="site"><div class="wrap">
+  <div class="privacy">
+    <span class="dot">&#9679;</span> This site makes zero third-party requests. No trackers, no analytics, no Google Fonts, no CDNs. Fonts and styles are served locally. Open your browser's network tab and check &mdash; a privacy tool's own site should not surveil its visitors.
+  </div>
+  <div class="ident">
+    Maintained pseudonymously. Privacy is not a crime; blocking surveillance infrastructure is self-defense. &middot; <a href="https://github.com/cypherpilgrim/satoshishield">Source on GitHub</a> &middot; MIT
+  </div>
+</div></footer>
+</body>
+</html>
