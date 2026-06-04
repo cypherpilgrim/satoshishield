@@ -31,6 +31,42 @@ REPO_URL = "https://github.com/cypherpilgrim/satoshishield"
 REPO_BLOB = REPO_URL + "/blob/main/"
 DOMAINS_CSV = ROOT / "domains.csv"
 
+
+def domain_records():
+    """All domains.csv rows that have a domain value."""
+    if not DOMAINS_CSV.exists():
+        return []
+    out = []
+    with DOMAINS_CSV.open(encoding="utf-8", newline="") as f:
+        for r in csv.DictReader(f):
+            if (r.get("domain") or "").strip():
+                out.append(r)
+    return out
+
+
+def domain_counts(records):
+    """(entry_count, distinct_org_count, sorted_category_list)."""
+    orgs = {(r["organization"] or "").strip() for r in records if (r["organization"] or "").strip()}
+    cats = sorted({(r["category"] or "").strip() for r in records if (r["category"] or "").strip()})
+    return len(records), len(orgs), cats
+
+
+CHANGELOG_MD = ROOT / "CHANGELOG.md"
+
+
+def latest_release():
+    """Parse the most recent version + date from CHANGELOG.md.
+    Returns (version, iso_date) or (None, None)."""
+    if not CHANGELOG_MD.exists():
+        return None, None
+    text = CHANGELOG_MD.read_text(encoding="utf-8")
+    # first '## [X.Y.Z] - YYYY-MM-DD' (date separator may be -, en/em dash)
+    m = re.search(
+        r"^\#{2}\s*\[(\d+\.\d+\.\d+)\]\s*[-\u2013\u2014]\s*(\d{4}-\d{2}-\d{2})",
+        text, re.M,
+    )
+    return (m.group(1), m.group(2)) if m else (None, None)
+
 # ------------------------------------------------------------------ doc map
 # order matters: drives the in-site "Documentation" nav order
 DOCS = [
@@ -59,7 +95,7 @@ DOCS = [
     ("docs/SatoshiShield_Quarterly_Checklist_v1_4.md",
      "Quarterly Checklist", "Contribute"),
     ("CONTRIBUTING.md", "Contributing", "Contribute"),
-    ("CHANGELOG.md", "Changelog", "Project"),
+    ("CHANGELOG.md", "Releases", "Project · Release history"),
     ("SECURITY.md", "Security Policy", "Project"),
 ]
 
@@ -146,6 +182,7 @@ def page_shell(title, kicker, toc_html, content_html):
         f'<a href="index.html#blocked">What\'s blocked</a>'
         f'<a href="index.html#install">Install</a>'
         f'<a href="index.html#docs">Docs</a>'
+        f'<a href="CHANGELOG.html">Releases</a>'
         f'<a href="{REPO_URL}">GitHub</a>'
     )
     kicker_html = f'<div class="doc-meta">{html.escape(kicker)}</div>' if kicker else ""
@@ -245,6 +282,7 @@ def blocked_page_shell(title, body_html, tail_html=""):
         f'<a href="index.html#blocked">What\'s blocked</a>'
         f'<a href="index.html#install">Install</a>'
         f'<a href="index.html#docs">Docs</a>'
+        f'<a href="CHANGELOG.html">Releases</a>'
         f'<a href="{REPO_URL}">GitHub</a>'
     )
     return f"""<!DOCTYPE html>
@@ -280,15 +318,8 @@ def render_blocked_domains():
         print("  ! skip (missing): domains.csv")
         return None
 
-    rows = []
-    with DOMAINS_CSV.open(encoding="utf-8", newline="") as f:
-        for r in csv.DictReader(f):
-            if (r.get("domain") or "").strip():
-                rows.append(r)
-
-    org_count = len({(r["organization"] or "").strip() for r in rows})
-    cats = sorted({(r["category"] or "").strip() for r in rows if (r["category"] or "").strip()})
-    total = len(rows)
+    rows = domain_records()
+    total, org_count, cats = domain_counts(rows)
 
     cat_options = '<option value="">All categories</option>' + "".join(
         f'<option value="{_esc(c, attr=True)}">{_esc(c)}</option>' for c in cats
@@ -322,7 +353,7 @@ def render_blocked_domains():
     body = f"""<section class="band dirsec"><div class="wrap">
   <div class="kicker">What gets blocked &middot; Tier 1</div>
   <h2>The full list</h2>
-  <p class="lede">Every entry below is the live blocklist data, rendered straight from <code>domains.csv</code> &mdash; all {total} Tier 1 entries across {len(cats)} categories of surveillance. Each carries a one-sentence privacy harm, a source you can check, and the date it was last verified. Search or filter to find a specific firm or domain.</p>
+  <p class="lede">Every entry below is the live blocklist data, rendered straight from <code>domains.csv</code> &mdash; all {total} Tier 1 entries from {org_count} organizations across {len(cats)} categories of surveillance. Each carries a one-sentence privacy harm, a source you can check, and the date it was last verified. Search or filter to find a specific firm or domain.</p>
 
   <div class="dir-controls">
     <input id="dir-q" type="search" placeholder="Search domain, organization, or harm&hellip;" autocomplete="off" spellcheck="false">
@@ -385,8 +416,19 @@ def main():
     shutil.copytree(SRC / "assets", OUT / "assets")
     if (SRC / ".well-known").exists():
         shutil.copytree(SRC / ".well-known", OUT / ".well-known")
-    # landing page
-    shutil.copy(SRC / "templates" / "landing.html", OUT / "index.html")
+    # landing page — inject live counts from domains.csv so the homepage
+    # figures stay in sync with the source data and the directory page
+    records = domain_records()
+    total, org_count, cats = domain_counts(records)
+    ver, date = latest_release()
+    landing = (SRC / "templates" / "landing.html").read_text(encoding="utf-8")
+    landing = (landing
+               .replace("{{ORG_COUNT}}", str(org_count))
+               .replace("{{CAT_COUNT}}", str(len(cats)))
+               .replace("{{DOMAIN_COUNT}}", str(total))
+               .replace("{{LATEST_VERSION}}", ver or "")
+               .replace("{{LATEST_DATE}}", date or ""))
+    (OUT / "index.html").write_text(landing, encoding="utf-8")
 
     built = []
     for src_rel, title, kicker in DOCS:

@@ -26,6 +26,7 @@
     <a href="#install">Install</a>
     <a href="#mobile">Mobile</a>
     <a href="#docs">Docs</a>
+    <a href="CHANGELOG.html">Releases</a>
     <a href="https://github.com/cypherpilgrim/satoshishield">GitHub</a>
   </nav>
 </div></header>
@@ -41,6 +42,13 @@
     <a class="btn btn-primary" href="SatoshiShield_The_Background_Hum_v1_0.html">Read The Background Hum &rarr;</a>
     <a class="btn btn-ghost" href="#install">Install in two minutes</a>
   </div>
+
+  <p class="release-sig">
+    <span class="dot">&#9679;</span> Actively maintained &mdash;
+    latest release <a href="CHANGELOG.html"><strong>v{{LATEST_VERSION}}</strong></a>
+    &middot; {{LATEST_DATE}} &middot;
+    <a href="CHANGELOG.html">all releases &rarr;</a>
+  </p>
 
   <svg class="hum" viewBox="0 0 1000 70" preserveAspectRatio="none" role="img" aria-label="A surveillance signal decaying into silence">
     <line class="flat" x1="0" y1="35" x2="1000" y2="35" stroke-width="1"/>
@@ -81,7 +89,7 @@
 <!-- ============================ BLOCKED ============================ -->
 <section class="band" id="blocked"><div class="wrap">
   <div class="kicker">What gets blocked &middot; Tier 1</div>
-  <h2>24 organizations, six categories of surveillance</h2>
+  <h2>{{ORG_COUNT}} organizations, {{CAT_COUNT}} categories of surveillance</h2>
   <p class="lede">Each entry is documented with a one-sentence privacy harm, a source, and a verification date. The list is precise: it does not block Bitcoin peers, privacy-respecting explorers, exchange websites, wallet downloads, or Lightning infrastructure.</p>
   <div class="cats">
     <div class="cat"><div class="num">01</div><h4>Blockchain Analytics</h4><p>Correlate your IP with every address and transaction you look up. Chainalysis, Elliptic, TRM Labs, CipherTrace, and others.</p></div>
@@ -157,6 +165,7 @@ Tailscale &rarr; DNS &rarr; Override local DNS: on</code>
     <div class="cat"><div class="num">Evidence</div><h4><a href="IRS_Procurement_Landscape_Followup.html">Federal Procurement Stack</a></h4><p>A 2018&ndash;2025 survey of U.S. contracts to trace and de-anonymize crypto.</p></div>
     <div class="cat"><div class="num">Technical</div><h4><a href="SatoshiShield_WhitePaper_v1_4.html">White Paper</a></h4><p>Full rationale, architecture, methodology, and adversarial analysis.</p></div>
     <div class="cat"><div class="num">Contribute</div><h4><a href="SatoshiShield_Contributor_Guide_v1_4.html">Contributor Guide</a></h4><p>Research methodology, tools, and the domain submission process.</p></div>
+    <div class="cat"><div class="num">Project</div><h4><a href="CHANGELOG.html">Releases &amp; Changelog</a></h4><p>Version history and what changed in each release &mdash; the project's maintenance record.</p></div>
   </div>
 </div></section>
 
