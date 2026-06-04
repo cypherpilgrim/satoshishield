@@ -34,6 +34,8 @@ REPO_BLOB = REPO_URL + "/blob/main/"
 DOCS = [
     ("docs/SatoshiShield_The_Background_Hum_v1_0.md",
      "The Background Hum", "Case study · Start here"),
+    ("docs/SatoshiShield_Install_Guide_v1_0.md",
+     "Install Guide", "Install"),
     ("docs/Why_Bitcoin_Privacy_Matters_v1_0.md",
      "Why Bitcoin Privacy Matters", "Primer"),
     ("docs/Why_Bitcoin_Privacy_Matters_Deep_Dive_v1_0.md",

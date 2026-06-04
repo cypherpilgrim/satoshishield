@@ -100,7 +100,7 @@
 <section class="band" id="install"><div class="wrap">
   <div class="kicker">Quick install</div>
   <h2>Two minutes, then verify</h2>
-  <p class="lede">Add the Tier 1 list to your DNS blocker and update. Pi-hole users must also apply the regex deny rules so wildcard entries take effect &mdash; see the README for the exact steps.</p>
+  <p class="lede">Add the Tier 1 list to your DNS blocker and update. Pi-hole users must also apply the regex deny rules so wildcard entries take effect &mdash; see the <a href="SatoshiShield_Install_Guide_v1_0.html">full install guide</a> for the exact steps, including the regex rules and verification checks.</p>
   <div class="install">
     <div class="step">
       <div class="t">Pi-hole &mdash; Settings &gt; Blocklists &gt; Add, then <code style="display:inline;color:var(--ink-dim);border:none;background:none;padding:0;">pihole -g</code></div>
@@ -113,6 +113,10 @@
     <div class="step">
       <div class="t">Verify it is working (should return 0.0.0.0 or nothing)</div>
       <code class="codeline">dig api.chainalysis.com +short</code>
+    </div>
+    <div class="step">
+      <div class="t">Full steps &mdash; regex deny rules, AdGuard, verification, troubleshooting</div>
+      <code class="codeline"><a href="SatoshiShield_Install_Guide_v1_0.html">Read the full install guide &rarr;</a></code>
     </div>
   </div>
 </div></section>
@@ -146,6 +150,7 @@ Tailscale &rarr; DNS &rarr; Override local DNS: on</code>
   <h2>Read the evidence, deploy the defense</h2>
   <div class="cats" style="grid-template-columns:1fr 1fr;">
     <div class="cat"><div class="num">Case study</div><h4><a href="SatoshiShield_The_Background_Hum_v1_0.html">The Background Hum</a></h4><p>What surveillance looks like in practice for one ordinary user. Start here.</p></div>
+    <div class="cat"><div class="num">Install</div><h4><a href="SatoshiShield_Install_Guide_v1_0.html">Full Install Guide</a></h4><p>End-to-end setup: the list, the Pi-hole regex deny rules, AdGuard Home, and verification.</p></div>
     <div class="cat"><div class="num">Primer</div><h4><a href="Why_Bitcoin_Privacy_Matters_v1_0.html">Why Bitcoin Privacy Matters</a></h4><p>The surveillance industry and what it means for you. Short guide, plus a deep-dive edition.</p></div>
     <div class="cat"><div class="num">Evidence</div><h4><a href="IRS_Privacy_Coin_Tracing_Case_Study.html">IRS Privacy-Coin Tracing</a></h4><p>The 2020 IRS-CI contract to trace Monero and Lightning, from the public record.</p></div>
     <div class="cat"><div class="num">Evidence</div><h4><a href="IRS_Procurement_Landscape_Followup.html">Federal Procurement Stack</a></h4><p>A 2018&ndash;2025 survey of U.S. contracts to trace and de-anonymize crypto.</p></div>
