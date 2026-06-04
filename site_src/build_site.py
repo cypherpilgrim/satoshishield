@@ -16,6 +16,7 @@ Output:
 """
 
 import re
+import csv
 import shutil
 import html
 from pathlib import Path
@@ -28,6 +29,7 @@ SRC = ROOT / "site_src"
 OUT = ROOT / "site"
 REPO_URL = "https://github.com/cypherpilgrim/satoshishield"
 REPO_BLOB = REPO_URL + "/blob/main/"
+DOMAINS_CSV = ROOT / "domains.csv"
 
 # ------------------------------------------------------------------ doc map
 # order matters: drives the in-site "Documentation" nav order
@@ -232,6 +234,149 @@ def render_doc(src_rel, title, kicker):
     return out.name
 
 
+# ------------------------------------------------------------------ domain directory
+def _esc(s, attr=False):
+    return html.escape((s or "").strip(), quote=attr)
+
+
+def blocked_page_shell(title, body_html, tail_html=""):
+    nav = (
+        f'<a href="SatoshiShield_The_Background_Hum_v1_0.html">Start</a>'
+        f'<a href="index.html#blocked">What\'s blocked</a>'
+        f'<a href="index.html#install">Install</a>'
+        f'<a href="index.html#docs">Docs</a>'
+        f'<a href="{REPO_URL}">GitHub</a>'
+    )
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{html.escape(title)} — SatoshiShield</title>
+<meta name="description" content="The full SatoshiShield blocklist: every blocked surveillance-firm domain with its category, privacy harm, source, and verification date.">
+<meta name="referrer" content="no-referrer">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html"><span class="b">&#8383;</span> SatoshiShield</a>
+  <nav class="topnav">{nav}</nav>
+</div></header>
+
+<main>
+{body_html}
+</main>
+
+{FOOTER}
+{tail_html}
+</body>
+</html>
+"""
+
+
+def render_blocked_domains():
+    """Render domains.csv into a searchable, filterable on-site table."""
+    if not DOMAINS_CSV.exists():
+        print("  ! skip (missing): domains.csv")
+        return None
+
+    rows = []
+    with DOMAINS_CSV.open(encoding="utf-8", newline="") as f:
+        for r in csv.DictReader(f):
+            if (r.get("domain") or "").strip():
+                rows.append(r)
+
+    org_count = len({(r["organization"] or "").strip() for r in rows})
+    cats = sorted({(r["category"] or "").strip() for r in rows if (r["category"] or "").strip()})
+    total = len(rows)
+
+    cat_options = '<option value="">All categories</option>' + "".join(
+        f'<option value="{_esc(c, attr=True)}">{_esc(c)}</option>' for c in cats
+    )
+
+    tr = []
+    for r in rows:
+        domain = (r["domain"] or "").strip()
+        org = (r["organization"] or "").strip()
+        cat = (r["category"] or "").strip()
+        harm = (r["harm"] or "").strip()
+        src = (r["source"] or "").strip()
+        ver = (r.get("date_verified") or "").strip()
+        blob = " ".join([domain, org, cat, harm]).lower()
+        src_cell = (
+            f'<a href="{_esc(src, attr=True)}" target="_blank" rel="noreferrer noopener">source &#8599;</a>'
+            if src else "&mdash;"
+        )
+        tr.append(
+            f'<tr data-cat="{_esc(cat, attr=True)}" data-search="{_esc(blob, attr=True)}">'
+            f'<td><code>{_esc(domain)}</code></td>'
+            f'<td class="org">{_esc(org)}</td>'
+            f'<td class="cat">{_esc(cat)}</td>'
+            f'<td class="harm">{_esc(harm)}</td>'
+            f'<td class="src">{src_cell}</td>'
+            f'<td class="ver">{_esc(ver)}</td>'
+            "</tr>"
+        )
+    rows_html = "\n".join(tr)
+
+    body = f"""<section class="band dirsec"><div class="wrap">
+  <div class="kicker">What gets blocked &middot; Tier 1</div>
+  <h2>The full list</h2>
+  <p class="lede">Every entry below is the live blocklist data, rendered straight from <code>domains.csv</code> &mdash; all {total} Tier 1 entries across {len(cats)} categories of surveillance. Each carries a one-sentence privacy harm, a source you can check, and the date it was last verified. Search or filter to find a specific firm or domain.</p>
+
+  <div class="dir-controls">
+    <input id="dir-q" type="search" placeholder="Search domain, organization, or harm&hellip;" autocomplete="off" spellcheck="false">
+    <select id="dir-cat" aria-label="Filter by category">{cat_options}</select>
+    <span class="dir-count" id="dir-count">Showing {total} of {total}</span>
+  </div>
+
+  <div class="dirwrap">
+    <table class="domtable" id="dir-table">
+      <thead><tr>
+        <th>Domain</th><th>Organization</th><th>Category</th>
+        <th>Privacy harm</th><th>Source</th><th>Verified</th>
+      </tr></thead>
+      <tbody>
+{rows_html}
+      </tbody>
+    </table>
+  </div>
+
+  <p class="dir-foot">Generated from the source data on every build. Prefer the raw file? <a href="{REPO_BLOB}domains.csv">View domains.csv on GitHub</a>.</p>
+</div></section>"""
+
+    script = """<script>
+(function () {
+  var q = document.getElementById('dir-q');
+  var cat = document.getElementById('dir-cat');
+  var count = document.getElementById('dir-count');
+  var rows = Array.prototype.slice.call(
+    document.querySelectorAll('#dir-table tbody tr'));
+  var total = rows.length;
+  function apply() {
+    var term = (q.value || '').trim().toLowerCase();
+    var c = cat.value || '';
+    var shown = 0;
+    for (var i = 0; i < rows.length; i++) {
+      var r = rows[i];
+      var okText = !term || r.getAttribute('data-search').indexOf(term) !== -1;
+      var okCat = !c || r.getAttribute('data-cat') === c;
+      if (okText && okCat) { r.style.display = ''; shown++; }
+      else { r.style.display = 'none'; }
+    }
+    count.textContent = 'Showing ' + shown + ' of ' + total;
+  }
+  q.addEventListener('input', apply);
+  cat.addEventListener('change', apply);
+  apply();
+})();
+</script>"""
+
+    out = OUT / "blocked-domains.html"
+    out.write_text(blocked_page_shell("Blocked Domains", body, script), encoding="utf-8")
+    return out.name
+
+
 # ------------------------------------------------------------------ main
 def main():
     if OUT.exists():
@@ -249,7 +394,12 @@ def main():
             built.append(render_doc(src_rel, title, kicker))
         else:
             print(f"  ! skip (missing): {src_rel}")
-    print(f"Built index.html + {len(built)} doc pages -> {OUT}")
+
+    bd = render_blocked_domains()
+    if bd:
+        built.append(bd)
+
+    print(f"Built index.html + {len(built)} pages -> {OUT}")
 
 
 if __name__ == "__main__":

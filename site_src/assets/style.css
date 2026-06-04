@@ -318,3 +318,56 @@ footer.site .privacy .dot { color: var(--safe); }
 footer.site .ident { font-family: var(--serif); font-style: italic; color: var(--ink-dim); max-width: 40ch; }
 footer.site a { color: var(--ink-dim); }
 footer.site a:hover { color: var(--accent); }
+
+/* ----------------------------------------------------- domain directory */
+.dirsec { padding: 56px 0 96px; }
+.dir-controls {
+  display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+  margin: 30px 0 18px;
+}
+.dir-controls input[type="search"],
+.dir-controls select {
+  font-family: var(--mono); font-size: 14px; color: var(--ink);
+  background: var(--bg-raised); border: 1px solid var(--rule);
+  border-radius: 4px; padding: 10px 12px;
+}
+.dir-controls input[type="search"] { flex: 1 1 300px; min-width: 220px; }
+.dir-controls input[type="search"]:focus,
+.dir-controls select:focus { outline: none; border-color: var(--accent); }
+.dir-controls select { flex: 0 0 auto; }
+.dir-count {
+  font-family: var(--mono); font-size: 12px; color: var(--ink-faint);
+  letter-spacing: .04em; margin-left: auto;
+}
+.dirwrap {
+  overflow-x: auto; border: 1px solid var(--rule);
+  border-radius: 5px; background: var(--bg-raised);
+}
+.domtable { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.domtable thead th {
+  position: sticky; top: 58px; background: var(--bg-code);
+  text-align: left; font-family: var(--mono); font-size: 11px;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint);
+  padding: 12px 14px; border-bottom: 1px solid var(--rule); white-space: nowrap;
+}
+.domtable tbody td {
+  padding: 12px 14px; border-bottom: 1px solid var(--rule-soft);
+  color: var(--ink-dim); vertical-align: top;
+}
+.domtable tbody tr:last-child td { border-bottom: none; }
+.domtable tbody tr:hover td { background: rgba(255,255,255,0.02); }
+.domtable code {
+  font-family: var(--mono); font-size: 12.5px; color: var(--safe);
+  white-space: nowrap; background: none; border: none; padding: 0;
+}
+.domtable .org { color: var(--ink); white-space: nowrap; }
+.domtable .cat { font-family: var(--mono); font-size: 11.5px; color: var(--accent); white-space: nowrap; }
+.domtable .harm { min-width: 320px; line-height: 1.5; }
+.domtable .src a { font-family: var(--mono); font-size: 12px; white-space: nowrap; }
+.domtable .ver { font-family: var(--mono); font-size: 12px; color: var(--ink-faint); white-space: nowrap; }
+.dir-foot {
+  margin-top: 22px; font-family: var(--mono); font-size: 12.5px; color: var(--ink-faint);
+}
+@media (max-width: 700px) {
+  .dir-count { margin-left: 0; width: 100%; }
+}
