@@ -2,7 +2,7 @@
 
 This is the complete setup, end to end: add the list, apply the Pi-hole regex deny rules that the URL list cannot carry on its own, and verify the result. The quick-install block on the home page is enough to get the list loaded; this page is for getting it loaded *correctly*, including the step most people skip.
 
-The recommended setup for everyone is **Tier 1 plus the regex deny rules**. Tier 2 is optional and for advanced users.
+The recommended setup for everyone is **Tier 1 plus the regex deny rules**.
 
 ---
 
@@ -175,9 +175,3 @@ A short checklist for the usual causes, in the order worth checking:
 ## Beyond your home network
 
 Everything above protects devices while they are on your network. A phone on cellular data resolves through its carrier and is not covered. To carry the protection with you — over Tailscale back to your home Pi-hole, or with an on-device filter — see [Take it with you](README.md#mobile) on the home page.
-
----
-
-## Tier 2 (optional, advanced)
-
-Tier 2 covers dual-use domains where the surveillance harm needs individual confirmation before blocking. Review [domains-tier2.csv](domains-tier2.csv) first, then add the Tier 2 list the same way: `blocklist-tier2.txt` for Pi-hole, or `satoshishield-tier2.abp` for AdGuard Home. A combined Tier 1 + Tier 2 list is available at `blocklist-all.txt`.
