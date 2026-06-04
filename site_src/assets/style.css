@@ -224,6 +224,21 @@ section.band h2 {
   display: block; white-space: pre-wrap; word-break: break-all; line-height: 1.6;
 }
 
+/* "Take it with you" — mobile coverage section (#mobile) */
+#mobile .cats { grid-template-columns: 1fr 1fr; }
+@media (max-width: 700px) { #mobile .cats { grid-template-columns: 1fr; } }
+#mobile .cat .codeline {
+  margin-top: 14px; padding: 10px 12px;
+  background: var(--bg-code); border: 1px solid var(--rule-soft); border-radius: 4px;
+}
+#mobile .note {
+  margin: 30px 0 0; padding: 16px 20px;
+  border-left: 2px solid var(--accent); background: var(--bg-raised);
+  border-radius: 0 4px 4px 0; color: var(--ink-dim);
+  font-size: 15px; line-height: 1.6;
+}
+#mobile .note strong { color: var(--ink); font-weight: 700; }
+
 /* ============================================================
    DOC / ARTICLE PAGES
    ============================================================ */

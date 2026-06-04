@@ -24,6 +24,7 @@
     <a href="SatoshiShield_The_Background_Hum_v1_0.html">Start</a>
     <a href="#blocked">What's blocked</a>
     <a href="#install">Install</a>
+    <a href="#mobile">Mobile</a>
     <a href="#docs">Docs</a>
     <a href="https://github.com/cypherpilgrim/satoshishield">GitHub</a>
   </nav>
@@ -114,6 +115,29 @@
       <code class="codeline">dig api.chainalysis.com +short</code>
     </div>
   </div>
+</div></section>
+
+<!-- ====================== TAKE IT WITH YOU ====================== -->
+<section class="band" id="mobile"><div class="wrap">
+  <div class="kicker">Take it with you</div>
+  <h2>Your protection stops at the front door</h2>
+  <p class="lede">SatoshiShield protects a network, not a device. Every phone, laptop, and tablet on your home network is covered because they all resolve DNS through your Pi-hole or AdGuard Home. The moment your phone leaves the house and drops to cellular, it resolves through your carrier instead, and the blocklist does nothing &mdash; the protection was a property of being on your network, and you have left it. There are two ways to carry it with you.</p>
+  <div class="cats">
+    <div class="cat">
+      <div class="num">Option 1 &middot; Keep your own resolver</div>
+      <h4>Route your phone's DNS back home</h4>
+      <p>Tailscale builds an encrypted tunnel between your phone and your home network. Point your tailnet's DNS at your Pi-hole and turn on <em>Override local DNS</em>, and every lookup your phone makes travels back to your own resolver &mdash; on cellular, on public Wi-Fi, anywhere. Only the DNS query goes through the tunnel, so it stays light.</p>
+      <code class="codeline">Tailscale &rarr; DNS &rarr; Nameserver: your Pi-hole's address
+Tailscale &rarr; DNS &rarr; Override local DNS: on</code>
+    </div>
+    <div class="cat">
+      <div class="num">Option 2 &middot; No home connection needed</div>
+      <h4>Filter on the device itself</h4>
+      <p>Install the AdGuard app on your phone and add the SatoshiShield list as a custom DNS filter. It filters on the device, on any network, with nothing to tunnel back to. The trade-off is that you are maintaining the list in a second place, and it is the app rather than your own resolver doing the work.</p>
+      <code class="codeline">https://raw.githubusercontent.com/cypherpilgrim/satoshishield/main/satoshishield.abp</code>
+    </div>
+  </div>
+  <p class="note"><strong>The same limit applies as at home.</strong> DNS filtering only sees queries that go through the system resolver. An app that ships its own hardcoded DNS-over-HTTPS, or connects straight to a hardcoded IP, bypasses it. This closes the cellular gap for ordinary traffic &mdash; not for apps built to route around it.</p>
 </div></section>
 
 <!-- ============================ DOCS ============================ -->
