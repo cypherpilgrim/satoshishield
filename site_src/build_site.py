@@ -74,6 +74,8 @@ DOCS = [
      "The Background Hum", "Case study · Start here"),
     ("docs/SatoshiShield_Install_Guide_v1_0.md",
      "Install Guide", "Install"),
+    ("docs/SatoshiShield_FAQ_v1_0.md",
+     "FAQ", "FAQ"),
     ("docs/Why_Bitcoin_Privacy_Matters_v1_0.md",
      "Why Bitcoin Privacy Matters", "Primer"),
     ("docs/Why_Bitcoin_Privacy_Matters_Deep_Dive_v1_0.md",
@@ -133,6 +135,8 @@ def rewrite_links(body_html: str) -> str:
             target = DOC_HTML[stem]
         elif path.endswith(".md"):
             target = stem + ".html"
+        elif path.endswith(".html"):
+            target = path           # already-built site page (relative)
         elif path == "" and anchor:
             target = ""
         else:

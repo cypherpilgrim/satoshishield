@@ -302,7 +302,7 @@ Running your own node is the most important privacy improvement you can make. Sa
 
 **Does this work on mobile devices?**
 
-Yes — when installed on a Pi-hole or AdGuard Home that serves DNS for your entire network, SatoshiShield protects every device on that network, including phones and tablets, without any configuration changes on individual devices.
+On your home network, yes — every phone and tablet that resolves DNS through your Pi-hole or AdGuard Home is protected, with no configuration on the device itself. That protection is a property of the network, however, not the device. When a phone leaves the home network and drops to cellular data, it resolves DNS through its carrier and the blocklist no longer applies. To extend protection beyond the home network, route the phone's DNS back to your home Pi-hole over Tailscale, or run an on-device filter such as the AdGuard app pointed at the SatoshiShield list.
 
 **How do I know the blocklist is not blocking things it should not?**
 
