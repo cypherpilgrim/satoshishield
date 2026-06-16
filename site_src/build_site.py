@@ -101,6 +101,32 @@ DOCS = [
     ("SECURITY.md", "Security Policy", "Project"),
 ]
 
+# Verification records — auto-discovered from verifications/*.md. Built to HTML
+# and registered for link rewriting, but kept OUT of the static nav; they are
+# reachable from the generated Verification Records index page. Drop a new
+# sanitized record into verifications/ and it appears on the next build.
+VERIF_DIR = ROOT / "verifications"
+
+
+def _verif_title(stem):
+    """2026-05-26-anchain-ai -> 'Anchain Ai' (display title for the page)."""
+    return re.sub(r"^\d{4}-\d{2}-\d{2}-", "", stem).replace("-", " ").title()
+
+
+def verification_docs():
+    if not VERIF_DIR.exists():
+        return []
+    out = []
+    for p in sorted(VERIF_DIR.glob("*.md")):
+        if p.name.lower() == "readme.md":
+            continue
+        out.append((f"verifications/{p.name}", _verif_title(p.stem),
+                    "Verification record"))
+    return out
+
+
+DOCS = DOCS + verification_docs()
+
 # basename(.md) -> output html filename, for link rewriting
 DOC_HTML = {Path(src).stem: Path(src).stem + ".html" for src, _, _ in DOCS}
 DOC_HTML["README"] = "index.html"
@@ -254,9 +280,21 @@ def strip_manual_toc(text: str) -> str:
     return text[: m.start()] + text[end:]
 
 
+def strip_frontmatter(text: str) -> str:
+    """Remove a leading YAML frontmatter block (--- ... ---) so it doesn't
+    render as visible junk. No-op for docs without frontmatter."""
+    if text.startswith("---"):
+        end = text.find("\n---", 3)
+        if end != -1:
+            nl = text.find("\n", end + 1)
+            return text[nl + 1:] if nl != -1 else ""
+    return text
+
+
 def render_doc(src_rel, title, kicker):
     src = ROOT / src_rel
-    text = strip_manual_toc(src.read_text(encoding="utf-8"))
+    text = strip_frontmatter(src.read_text(encoding="utf-8"))
+    text = strip_manual_toc(text)
 
     md = markdown.Markdown(
         extensions=["extra", "toc", "sane_lists", "attr_list"],
@@ -412,6 +450,92 @@ def render_blocked_domains():
     return out.name
 
 
+def _fm_value(text, key):
+    m = re.search(rf'^{key}:\s*"?(.*?)"?\s*$', text, re.MULTILINE)
+    return m.group(1).strip() if m else ""
+
+
+def render_verifications_index():
+    """Generate verifications.html: an index of every verification record,
+    grouped by outcome, linking to each built record page."""
+    if not VERIF_DIR.exists():
+        return None
+    recs = []
+    for p in sorted(VERIF_DIR.glob("*.md")):
+        if p.name.lower() == "readme.md":
+            continue
+        t = p.read_text(encoding="utf-8")
+        recs.append({
+            "html": p.stem + ".html",
+            "company": _fm_value(t, "company") or _verif_title(p.stem),
+            "date": _fm_value(t, "date"),
+            "outcome": _fm_value(t, "outcome"),
+            "tier": _fm_value(t, "tier"),
+            "hq": _fm_value(t, "hq_country"),
+        })
+
+    def bucket(o):
+        o = o.upper()
+        if "EXCLUD" in o:
+            return "Excluded"
+        if "CONSOLIDAT" in o:
+            return "Consolidated into parent"
+        if "PENDING" in o:
+            return "Verified — pending functional test"
+        return "Included"
+
+    order = ["Included", "Verified — pending functional test",
+             "Consolidated into parent", "Excluded"]
+    blurb = {
+        "Included": "Met the inclusion criteria and shipped to the blocklist.",
+        "Verified — pending functional test": "Met the criteria on the evidence; final on-network wallet-impact test still to run.",
+        "Consolidated into parent": "Independent surveillance history documented; coverage ships under an acquiring parent vendor.",
+        "Excluded": "Surveillance-adjacent but did not meet the criteria — no user-layer query surface DNS blocking can address.",
+    }
+    groups = {k: [] for k in order}
+    for r in recs:
+        groups[bucket(r["outcome"])].append(r)
+
+    inc = sum(len(groups[k]) for k in order[:2])
+    parts = [
+        '<div class="doc-meta">Research · Verification records</div>',
+        "<h1>Verification Records</h1>",
+        "<p>Every candidate domain runs through the same seven-step process before it "
+        "is included in or excluded from the blocklist: WHOIS/RDAP, SSL certificate "
+        "inspection, passive DNS, behavioral evidence, privacy-harm assessment, "
+        "inclusion-criteria scoring (six criteria), and a functional-impact test "
+        "confirming no Bitcoin wallet breakage. Each record below documents that work. "
+        "Internal lab infrastructure has been redacted; these are research artifacts, "
+        "not legal or financial advice.</p>",
+        f"<p><strong>{len(recs)} records</strong> — {inc} verified for inclusion, "
+        f"{len(groups['Excluded'])} excluded, "
+        f"{len(groups['Consolidated into parent'])} consolidated into a parent vendor.</p>",
+    ]
+    for k in order:
+        if not groups[k]:
+            continue
+        parts.append(f"<h2>{html.escape(k)}</h2>")
+        parts.append(f"<p>{html.escape(blurb[k])}</p>")
+        parts.append('<div class="tablewrap"><table>')
+        parts.append("<thead><tr><th>Company</th><th>Date</th><th>Region</th>"
+                     "<th>Tier</th></tr></thead><tbody>")
+        for r in sorted(groups[k], key=lambda x: x["company"].lower()):
+            name = _esc(r["company"].replace("-", " ").title())
+            tier = _esc(r["tier"]) if r["tier"] and r["tier"] != "N/A (excluded)" else "&mdash;"
+            parts.append(
+                f'<tr><td><a href="{_esc(r["html"], attr=True)}">{name}</a></td>'
+                f'<td>{_esc(r["date"]) or "&mdash;"}</td>'
+                f'<td>{_esc(r["hq"]) or "&mdash;"}</td><td>{tier}</td></tr>'
+            )
+        parts.append("</tbody></table></div>")
+
+    content = "\n".join(parts)
+    out = OUT / "verifications.html"
+    out.write_text(page_shell("Verification Records",
+                              "Research", "", content), encoding="utf-8")
+    return out.name
+
+
 # ------------------------------------------------------------------ main
 def main():
     if OUT.exists():
@@ -444,6 +568,10 @@ def main():
     bd = render_blocked_domains()
     if bd:
         built.append(bd)
+
+    vi = render_verifications_index()
+    if vi:
+        built.append(vi)
 
     print(f"Built index.html + {len(built)} pages -> {OUT}")
 
