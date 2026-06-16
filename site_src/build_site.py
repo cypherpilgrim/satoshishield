@@ -212,6 +212,7 @@ def page_shell(title, kicker, toc_html, content_html):
         f'<a href="index.html#blocked">What\'s blocked</a>'
         f'<a href="index.html#install">Install</a>'
         f'<a href="index.html#docs">Docs</a>'
+        f'<a href="verifications.html">Research</a>'
         f'<a href="CHANGELOG.html">Releases</a>'
         f'<a href="{REPO_URL}">GitHub</a>'
     )
@@ -324,6 +325,7 @@ def blocked_page_shell(title, body_html, tail_html=""):
         f'<a href="index.html#blocked">What\'s blocked</a>'
         f'<a href="index.html#install">Install</a>'
         f'<a href="index.html#docs">Docs</a>'
+        f'<a href="verifications.html">Research</a>'
         f'<a href="CHANGELOG.html">Releases</a>'
         f'<a href="{REPO_URL}">GitHub</a>'
     )
