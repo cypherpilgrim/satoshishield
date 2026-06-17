@@ -4,12 +4,12 @@ type: verification
 company: "cloudburst-technologies"
 date: 2026-05-30
 verifier: cypherpilgrim
-outcome: PENDING FUNCTIONAL TEST
+outcome: INCLUDED IN BLOCKLIST
 
 # Project metadata
 project: SatoshiShield
 tier: 1
-status: in-verification
+status: in-blocklist
 
 # Verdict and process
 verdict: Meets SatoshiShield inclusion criteria — off-chain cyber threat intelligence platform built to identify and attribute crypto actors across deep/dark web sources, marketed to law enforcement and OFAC use cases, with a documented strategic integration into Chainalysis's blockchain analytics stack
@@ -37,6 +37,7 @@ related_verifications:
 # Revision history
 revision_history:
   - "2026-05-30 v1: Initial verification — INCLUDED Tier 1, PENDING FUNCTIONAL TEST"
+  - "2026-06-16 v2: Status corrected to in-blocklist — shipped in v1.6.0"
 
 # Tags
 tags:
@@ -58,7 +59,7 @@ tags:
 ---
 # Cloudburst Technologies — Verification Record
 
-**VERDICT: INCLUDED IN BLOCKLIST (Tier 1) — PENDING FUNCTIONAL TEST.**
+**VERDICT: INCLUDED IN BLOCKLIST (Tier 1).**
 
 Cloudburst Technologies is a New York-based (Tribeca) cyber threat intelligence firm founded in 2022, specializing in off-chain crypto intelligence — the systematic collection and AI-driven analysis of non-blockchain data sources (Telegram, Discord, WeChat, forums, dark web markets, regulatory filings, news, social media) to attribute crypto activity to specific actors and identify fraud networks. The company's stated mission is to give "institutions visibility into the risks and narratives shaping the digital asset ecosystem beyond the blockchain" and to identify "who is behind a wallet, what groups they interact with, and how they try to push scams."
 
@@ -265,4 +266,4 @@ Cloudburst extends the off-chain-intelligence pattern first surfaced during TRM 
 | 6. Inclusion criteria     | ✓ Complete | **MEETS 5 of 6 CRITERIA — INCLUDE Tier 1**                                                                                                                                |
 | 7. Functional impact test | ✓ Complete | Six consumer test surfaces (BlueWallet, Muun, Sparrow, Strike, Coinbase web, Electrum); zero candidate-domain queries; zero functional impact                             |
 
-**Final verdict:** INCLUDED IN BLOCKLIST (Tier 1) — PENDING FUNCTIONAL TEST. Block scope: `burst.cloud` (root + wildcard). Add to `domains.csv` as two entries (`burst.cloud`, `*.burst.cloud`) once Step 7 confirms no wallet functionality impairment.
+**Final verdict:** INCLUDED IN BLOCKLIST (Tier 1). Block scope: `burst.cloud` (root + wildcard). Add to `domains.csv` as two entries (`burst.cloud`, `*.burst.cloud`) once Step 7 confirms no wallet functionality impairment.

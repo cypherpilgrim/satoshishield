@@ -4,12 +4,12 @@ type: verification
 company: "elementus"
 date: 2026-05-30
 verifier: cypherpilgrim
-outcome: PENDING FUNCTIONAL TEST
+outcome: INCLUDED IN BLOCKLIST
 
 # Project metadata
 project: SatoshiShield
 tier: 1
-status: in-verification
+status: in-blocklist
 
 # Verdict and process
 verdict: Meets SatoshiShield inclusion criteria — explicit deanonymization product per the firm's own marketing copy ("Our patented technology de-anonymizes wallets and reveals the interconnected network of entities behind every transaction"), with patented algorithms for forensic investigation, sanctions detection, and beneficial ownership attribution sold to government agencies and institutional clients
@@ -35,6 +35,7 @@ related_verifications: []
 # Revision history
 revision_history:
   - "2026-05-30 v1: Initial verification — INCLUDED Tier 1, PENDING FUNCTIONAL TEST"
+  - "2026-06-16 v2: Status corrected to in-blocklist — shipped in v1.6.0"
 
 # Tags
 tags:
@@ -56,7 +57,7 @@ tags:
 ---
 # Elementus — Verification Record
 
-**VERDICT: INCLUDED IN BLOCKLIST (Tier 1) — PENDING FUNCTIONAL TEST.**
+**VERDICT: INCLUDED IN BLOCKLIST (Tier 1).**
 
 Elementus is a New York-based blockchain analytics and forensics firm founded in 2017 by Max Galka and headquartered at 43 W 23rd St, Manhattan. It has raised approximately $27M across multiple rounds from a top-tier investor syndicate including ParaFi Capital (led the Feb 2023 $10M round), Lightspeed Venture Partners, Velvet Sea Ventures, Pomp Investments, Morgan Creek Digital, and Avon Ventures (a Fidelity Investments-affiliated VC fund). Customer base, per the firm's own marketing, comprises government agencies, institutional asset managers, and financial service companies.
 
@@ -318,6 +319,6 @@ Elementus reinforces several patterns already documented:
 | 4. Behavioral evidence    | ✓ Complete | Vendor self-documentation includes direct "de-anonymizes wallets" admission                                                                                              |
 | 5. Privacy harm           | ✓ Complete | Direct deanonymization product with government customer base and sanctions/risk scoring                                                                                  |
 | 6. Inclusion criteria     | ✓ Complete | **MEETS 5 of 6 CRITERIA — INCLUDE Tier 1**                                                                                                                               |
-| 7. Functional impact test | ⏳ PENDING  | Required before v1.6.0 merge                                                                                                                                             |
+| 7. Functional impact test | ⏳ PENDING  | Shipped in v1.6.0 ahead of this test — recommend running to confirm                                                                                                                                             |
 
-**Final verdict:** INCLUDED IN BLOCKLIST (Tier 1) — PENDING FUNCTIONAL TEST. Block scope: `elementus.io` (root + wildcard). Add to `domains.csv` as two entries (`elementus.io`, `*.elementus.io`) once Step 7 confirms no wallet functionality impairment. Re-verify Step 1-3 surface to confirm no separate API/app domain (Amberdata precedent) before merge.
+**Final verdict:** INCLUDED IN BLOCKLIST (Tier 1). Block scope: `elementus.io` (root + wildcard). Add to `domains.csv` as two entries (`elementus.io`, `*.elementus.io`) once Step 7 confirms no wallet functionality impairment. Re-verify Step 1-3 surface to confirm no separate API/app domain (Amberdata precedent) before merge.
